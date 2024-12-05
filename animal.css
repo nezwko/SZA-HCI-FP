@@ -176,45 +176,50 @@ body {
 
 /* GENERAL INFO */
 .general {
-    background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    width: 88%;
-    margin: auto;
-    padding: 25px;
-    justify-content: center;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 70px;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  display: flex;
+}
+
+.divider {
+  display: flex;
+  width: 90%;
+  margin: auto;
+}
+.inner-img {
+  margin: auto;
+  padding: 14px;
+}
+
+.inner-img img{
+  width: 75px;
+}
+
+.inner-text {
+  padding: 14px;
 }
 
 h2 {
-    @import url(https://fonts.googleapis.com/css?family=Lexend);
-    font-family: "Lexend";
-    font-weight: 600;
-    color: black;
-    font-size: 24px;
+  font-size: 22px;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
 }
 
 p {
-    @import url(https://fonts.googleapis.com/css?family=Lexend);
-    font-family: "Lexend";
-    font-weight: 400;
-    color: black;
-    font-size: 16px;
+  font-size: 16px;
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
 }
 
-.info-container{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2em;
+.seperator {
+  background-color: white;
+  height: 200px;
 }
 
-.specific-container{
-    width: 43%;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 10px;
-
-}
 
