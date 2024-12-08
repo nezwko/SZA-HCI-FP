@@ -9,6 +9,7 @@
 
 body {
   background-size: 100%;
+  background-color: #CFFCFA;
 }
 
 .navigationbar {
@@ -31,7 +32,6 @@ body {
   border-radius: 40px;
   width: calc(100% - 40px);
   box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
-  justify-content: flex-start;
 }
 
 .nav-icon {
@@ -207,30 +207,55 @@ body {
 
 /* TITLE */
 
-.seperator {
+.skibidi {
   background-color: #CFFCFA;
-  height: 200px;
+  height: 140px;
+}
+
+.title {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  justify-content: space-between;
 }
 
 .title h1 {
   font-family: Lexend;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
   color: black;
+  margin-left: 15px;
+  margin-top: 5px;
 }
+
+.btn-audio {
+  cursor: pointer;
+  background-color: palevioletred;
+  color: white;
+  font-family: Lexend;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.btn-audio:hover {
+  background-color: rgb(150, 80, 103);
+}
+
 
 /* DESCRIPTION */
 
 .colored-bg {
-  background-color: #CFFCFA;
   width: 100%;
   height: 100%;
+  margin-top: 20px;
 }
 
 .flexbox-white-bg {
   border: 1px solid #ddd;
   background-color: white; /* Blue background */
-  width: calc(70% - 10px); /* Set width to 90% */
+  width: calc(60% - 10px); /* Set width to 90% */
   margin: auto; /* Center horizontally */
   border-radius: 10px; /* Set border radius to 10px */
   padding: 10px; /* Add padding to create space around the content */
@@ -257,6 +282,10 @@ body {
 }
 
 /* Paragraph styles */
+.desc-flexbox-para {
+  padding: 5px;
+}
+
 .desc-flexbox-para p {
   font-family: Lexend;
   font-weight: 500;
@@ -295,15 +324,26 @@ body {
   gap: 10px; 
   width: 75%;
   margin: auto;
+  margin-bottom: 40px;
 }
 
 .gallery-ff {
   display: flex;
   gap: 10px;
   flex-direction: column;
-  width: calc(30% - 10px)
+  width: calc(40% - 10px)
 }
 
+.gallery-title h2{
+  background-color: #689ea7;
+  padding: 12px;
+  border-radius: 8px;;
+  font-family: Lexend;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 5px;
+  color: white;
+}
 
 @media screen and (max-width: 768px) {
   .desc-flexbox {
@@ -318,4 +358,102 @@ body {
   .gallery-ff {
     margin-top: 10px;
   }
+
 }
+
+/* HABITAT */
+
+.column-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 97%;
+  margin: 10px auto;
+  padding: 6px;
+  gap: 10px;
+
+}
+.habitat-icon {
+  text-align: center;
+  background-color: white;
+  border: solid 1px #618fa0;
+  width: calc(50% - 10px);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.habitat-icon img{
+  width: 90%;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.habitat-icon p{
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #618fa0;
+}
+
+@media screen and (max-width: 768px) {
+  .column-2 {
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .habitat-icon {
+    width: 80%; 
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .habitat-icon img {
+    width: 90%;
+  }
+
+  .habitat-icon p{
+    width: 80%;
+    justify-content: center;
+    text-align: center;
+    margin: auto; 
+  }
+}
+
+/* FEATURES */
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: #999;
+  width: 100%;
+}
+
+.single-lines {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.single-lines img {
+  width: 80px;
+  padding: 10px;
+  margin: auto;
+}
+
+.single-lines-desc {
+  padding: 10px;
+  font-family: Lexend;
+}
+
+.single-lines-desc h3{
+  font-size: 18px;
+  color: #666;
+}
+
+.single-lines-desc p{
+  font-size: 14px;
+  color: #666;
+}
+
+
