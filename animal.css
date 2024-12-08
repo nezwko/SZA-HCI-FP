@@ -34,6 +34,12 @@ body {
   box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
 }
 
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center; 
+}
+
 .nav-icon {
   width: 30px;
   height: 30px;
@@ -386,6 +392,13 @@ body {
   width: 90%;
   border-radius: 10px;
   margin-top: 5px;
+}
+
+.habitat-icon h4 {
+  font-family: Lexend;
+  font-size: 18px;
+  font-weight: 900;
+  color: #436e7e;
 }
 
 .habitat-icon p{

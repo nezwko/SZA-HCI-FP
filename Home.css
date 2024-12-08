@@ -33,6 +33,12 @@ body {
   justify-content: flex-start;
 }
 
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center; 
+}
+
 .nav-icon {
   width: 30px;
   height: 30px;
