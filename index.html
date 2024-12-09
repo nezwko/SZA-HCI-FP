@@ -14,8 +14,8 @@
         <nav class="top-navbar">
             <img src="design/LOGO.png" alt="PawPedia-Logo" class="nav-icon"/>
             <div class="nav-links">
-                <a href="#" class="navbar active" active-color="#e76f51">Home</a>
-                <a href="#" class="navbar" active-color="#0077b6">Play!</a>
+                <a href="index.html" class="navbar active" active-color="#e76f51">Home</a>
+                <a href="play.html" class="navbar" active-color="#0077b6">Play!</a>
                 <div class="dropdown">
                     <a href="#" class="navbar dropdown-toggle" active-color="#0077b6">PawPals</a>
                     <div class="dropdown-content">
@@ -27,12 +27,12 @@
                         <a href="invertebrate.html">Invertebrates</a>
                     </div>
                 </div>
-                <a href="#" class="navbar" active-color="#0077b6">Quiz</a>
+                <a href="homequiz.html" class="navbar" active-color="#0077b6">Quiz</a>
             </div>
             <span class="nav-indicator"></span>
         </nav>
     </div>
-    <script src="Home.js"></script>
+
 
     <div class="banner">
         <div class="top-center">Unlock the secrets of the Animal Kingdom!</div>
@@ -68,56 +68,91 @@
             <button>Click To Start</button>
         </div>
     </div>
-    <div class="top-center4">PawPals!</div>
 
-    <div class="top-gallery">
-        <div class="gallery">
-            <a target="_blank" href="mammal.html">
-                <img src="design/mammal_ava.PNG" alt="Mammals">
-                <div class ="overlay">Mammals</div>
-            </a>
-        </div>
+    <div class="background-gallery">
+        <div class="top-center4">PawPals!</div>
+
+        <div class="top-gallery">
+            <div class="gallery">
+                <a target="_blank" href="mammal.html">
+                    <img src="design/mammal_ava.PNG" alt="Mammals">
+                    <div class ="overlay">Mammals</div>
+                </a>
+            </div>
+            
+            <div class="gallery">
+                <a target="_blank" href="bird.html">
+                    <img src="design/bird_ava.jpg" alt="Birds">
+                    <div class ="overlay">Birds</div>
+                </a>
+            </div>
         
-        <div class="gallery">
-            <a target="_blank" href="bird.html">
-                <img src="design/bird_ava.jpg" alt="Birds">
-                <div class ="overlay">Birds</div>
-            </a>
+            <div class="gallery">
+                <a target="_blank" href="reptile.html">
+                    <img src="design/reptile_ava.PNG" alt="Reptiles">
+                    <div class ="overlay">Reptiles</div>
+                </a>
+            </div>
         </div>
-    
-        <div class="gallery">
-            <a target="_blank" href="reptile.html">
-                <img src="design/reptile_ava.PNG" alt="Reptiles">
-                <div class ="overlay">Reptiles</div>
-            </a>
+
+        <div class="top-gallery">
+            <div class ="gallery">
+                <a target="_blank" href ="amphibian.html">
+                    <img src="design/amphibian_ava.PNG" alt="Amphibians">
+                    <div class ="overlay">Amphibians</div>
+                </a>
+            </div>
+            
+            <div class ="gallery">
+                <a target="_blank" href ="fish.html">
+                    <img src="design/fish_ava.PNG" alt="Fish">
+                    <div class ="overlay">Fishes</div>
+                </a>
+            </div>
+            
+            <div class ="gallery">
+                <a target="_blank" href ="invertebrate.html">
+                    <img src="design/inv_ava.PNG" alt="Invertebrates">
+                    <div class ="overlay">Invertebrates</div>
+                </a>
+            </div>
         </div>
     </div>
 
-
-    <div class="top-gallery">
-        <div class ="gallery">
-            <a target="_blank" href ="amphibian.html">
-                <img src="design/amphibian_ava.PNG" alt="Amphibians">
-                <div class ="overlay">Amphibians</div>
-            </a>
+    <div class="footer">
+        <div class="info">
+            <div class="subscribe">
+                <h5>Subscribe To Our Content!</h5>
+                <form>
+                    <input type="email" placeholder="Enter your email address..">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="feedback">
+                <h5>Share Your Feedback</h5>
+                <div class="form-feedback">
+                    <form>
+                        <textarea placeholder="Share your thoughts.."></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="social">
+                <h5>Follow Us</h5>
+                <ul>
+                    <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </div>
-        
-        <div class ="gallery">
-            <a target="_blank" href ="fish.html">
-                <img src="design/fish_ava.PNG" alt="Fish">
-                <div class ="overlay">Fishes</div>
-            </a>
-        </div>
-        
-        <div class ="gallery">
-            <a target="_blank" href ="invertebrate.html">
-                <img src="design/inv_ava.PNG" alt="Invertebrates">
-                <div class ="overlay">Invertebrates</div>
-            </a>
+        <div class="copyright">
+            <p>&copy; 2024 SZA Inc. All rights reserved.</p>
         </div>
     </div>
 
-
+    <script src="Home.js"></script>
 </body>
 </html>
 

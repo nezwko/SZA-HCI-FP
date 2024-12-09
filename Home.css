@@ -169,6 +169,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .gallery {
@@ -190,6 +191,11 @@ body {
   position: absolute; 
   top: 0; 
   left: 0; 
+}
+
+.background-gallery {
+  background-color: #CFFCFA;
+  margin-top: 35px;
 }
 
 /* BANNER */
@@ -375,5 +381,152 @@ p {
   }
   .learning-library1 .block:nth-child(3) {
     width: 70%;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background-color: #b8e2c0; /* Dark background for the footer */ /* White text color */
+  padding: 20px; /* Padding around the footer */
+  text-align: center; /* Center align text */
+}
+
+.info {
+  width: 90%; /* Max width for the content */
+  margin: 0 auto; /* Center the content */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+h5 {
+  font-family: Lexend;
+  font-weight: 500;
+  color: black;
+  font-size: 16px;
+}
+
+.subscribe {
+  margin-bottom: 20px; /* Space below the subscribe section */
+}
+
+.subscribe h5 {
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+.subscribe form {
+  display: flex; /* Flexbox for input and button */
+  gap: 10px;
+}
+
+.subscribe input[type="email"] {
+  width: 220px;
+  padding: 10px; /* Padding for the input */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  outline: 1px solid; /* Remove outline */
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.subscribe button, .feedback button{
+  padding: 10px 15px; /* Padding for the button */
+  border: none;
+  background-color: #7aa482; /* Button color */
+  color: #fff; /* Button text color */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.subscribe button:hover, .feedback button:hover{
+  background-color: #5f8666; /* Darker shade on hover */
+}
+
+.feedback textarea {
+  width: 250px;
+  padding: 10px; /* Padding for the input */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  outline: 1px solid; /* Remove outline */
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.form-feedback {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: auto;
+}
+
+.form-feedback button{
+  margin-bottom: 20px;
+}
+h5 {
+  margin: 15px 0; /* Space above and below headings */
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+}
+
+ul li {
+  margin: 5px 0; /* Space between list items */
+}
+
+.social {
+  margin-top: 20px; /* Space above social section */
+}
+
+.social h5 {
+  margin-bottom: 10px; /* Space below social heading */
+}
+
+.social ul {
+  display: flex; /* Flexbox for social icons */
+  justify-content: center; /* Center align icons */
+}
+
+.social ul li {
+  margin: 0 10px; /* Space between icons */
+}
+
+.social ul li a {
+  color: #fff; /* Icon color */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Remove underline */
+}
+
+.social ul li a:hover {
+  color: #ff5722; /* Change color on hover */
+}
+
+.copyright {
+  margin-top: 20px; /* Space above copyright */
+  font-size: 9px; /* Smaller font size */
+  color: #7aa482;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .subscribe form {
+      flex-direction: column; /* Stack input and button on small screens */
+  }
+
+  .subscribe input[type="email"] {
+      width: 100%; /* Full width for input */
+      margin-bottom: 10px; /* Space below input */
+  }
+
+  .subscribe button {
+      width: 100%; /* Full width for button */
   }
 }

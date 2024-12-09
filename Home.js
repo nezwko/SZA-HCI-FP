@@ -4,6 +4,8 @@ const indicator = document.querySelector(".nav-indicator");
 const items = document.querySelectorAll(".navbar");
 const dropdowns = document.querySelectorAll('.dropdown-toggle');
 
+
+
 function handleIndicator(el) {
     // Remove active class from all items
     items.forEach((item) => {
