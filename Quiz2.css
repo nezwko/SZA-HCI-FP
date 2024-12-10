@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css?family=Lexend");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-size: 100%;
+  background-color: #CFFCFA;
+}
+
+.navigationbar {
+  text-align: center;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.top-navbar {
+  display: flex;
+  align-items: center;
+  position: absolute; 
+  top: 25px; 
+  left: 20px; 
+  background-color: #fff;
+  padding: 0 20px;
+  border-radius: 40px;
+  width: calc(100% - 40px);
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+  justify-content: flex-start;
+}
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center; 
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px; 
+}
+
+.navbar {
+  color: #83818c;
+  padding: 20px 15px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin: 0;
+  z-index: 1;
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar:before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #dfe2ea;
+  border-radius: 8px 8px 0 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.navbar:not(.active):hover:before {
+  opacity: 1;
+  bottom: 0;
+}
+
+.navbar:not(.active):hover {
+  color: #333;
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  transition: 0.4s;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+  background-color: transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+} 
+
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  background-color: #fff; 
+  min-width: 140px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #83818c;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #f1f1f1; 
+}
+
+.dropdown-toggle {
+  position: relative;
+  display: inline-block; 
+}
+
+.dropdown-toggle:before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #dfe2ea; 
+  border-radius: 8px 8px 0 0;
+  opacity: 0; /* Initially hidden */
+  transition: 0.3s;
+}
+
+.dropdown-toggle:hover:before, 
+.dropdown-toggle.active:before { 
+  opacity: 1;
+  bottom: 0;
+}
+
+.dropdown-toggle:not(.active):hover {
+  color: #333; 
+}
+
+
+.dropdown-toggle.active {
+  color: #333; 
+}
+
+.quiz-container {
+  text-align: center;
+  margin: 150px auto; /* Increased margin to avoid overlap */
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  width: 70%;
+  font-family: "Lexend";
+}
+
+.question {
+    margin-top: 20px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: "Lexend";
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option {
+    background-color: #689ea7;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 15px;
+    margin: 10px;
+    width: 80%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Lexend";
+    font-weight: 500;
+    font-size: 22px;
+    border: 2px solid #689ea7;
+}
+
+.option:hover {
+  background-color: white;
+  color: #689ea7;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: 80%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 22px;
+  border: 2px solid #689ea7;
+}
+
+.option.correct {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+.option.wrong {
+    background-color: #dc3545; /* Red */
+    color: white;
+}
+
+.button-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    margin-top: 10px; /* Reduce space above the button */
+    margin-bottom: 10px; /* Optional: Add space below the button */
+}
+
+#next-button {
+    background-color: #689ea7;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 15px;
+    margin: 10px;
+    width: 15%;
+    transition: background-color 0.3s ease;
+    font-family: "Lexend";
+    font-weight: 500;
+    font-size: 14px;
+    border: 2px solid #689ea7;
+    opacity: 0; /* Start as invisible */
+    visibility: hidden; /* Hidden from view */
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+#next-button.visible {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it visible */
+  pointer-events: auto; /* Allow interaction when visible */
+  align-items: center;
+}
+
+#next-button.visible:hover {
+  background-color: white;
+  color: #689ea7;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: 15%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
+}
+
+.hero h2 {
+  color:#689ea7;
+  margin-top: 150px;
+  justify-self: center;
+  font-family: "Lexend";
+  font-size: 60px;
+}
+
+.quiz-container h2 {
+  font-size: 22px;
+  margin-top: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+
+
