@@ -445,7 +445,7 @@ hr {
 .single-lines {
   display: flex;
   padding: 10px;
-  justify-content: center;
+  margin-right: auto;
 }
 
 .single-lines img {
