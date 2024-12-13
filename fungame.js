@@ -72,17 +72,18 @@ const animalParts = [
 
 let currentAnimal = {};
 let level = 0;
+const wrongAnswerDisplay = document.getElementById("wrong-answer");
 
 function loadAnimalPart() {
     if (level < animalParts.length) {
         currentAnimal = animalParts[level];
         document.getElementById('animalImage').src = currentAnimal.part;
-        document.getElementById('message').textContent = '';
-        document.getElementById('next-button').classList.add('hidden');
+        wrongAnswerDisplay.classList.add("hidden");
+        document.getElementById('next-button').classList.remove('visible');
         createGuessBoxes(currentAnimal.name.length);
     } else {
         document.getElementById('message').textContent = 'Congratulations! You completed the game!';
-        document.getElementById('next-button').classList.add('hidden');
+        document.getElementById('next-button').classList.remove('visible');
     }
 }
 
@@ -144,10 +145,9 @@ document.getElementById('submitGuess').addEventListener('click', function() {
     });
 
     if (userGuess === currentAnimal.name) {
-        document.getElementById('message').textContent = 'Correct!';
-        document.getElementById('next-button').classList.remove('hidden');
+        document.getElementById('next-button').classList.add('visible');
     } else {
-        document.getElementById('message').textContent = 'Wrong guess! Try again.';
+        wrongAnswerDisplay.classList.remove("hidden");
     }
 });
 
