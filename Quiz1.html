@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game: Fill in the Blanks</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend">
+    <link rel="stylesheet" href="Quiz1.css">
+    <link rel="icon" href="design/LOGO.png">
+</head>
+<body>
+    <div class="hero">
+    <div class="navigationbar">
+        <nav class="top-navbar">
+            <img src="design/LOGO.png" alt="PawPedia-Logo" class="nav-icon"/>
+            <div class="nav-links">
+                <a href="index.html" class="navbar active" active-color="#e76f51">Home</a>
+                <a href="fungame.html" class="navbar" active-color="#0077b6">Play!</a>
+                <div class="dropdown">
+                    <a href="#" class="navbar dropdown-toggle" active-color="#0077b6">PawPals</a>
+                    <div class="dropdown-content">
+                        <a href="mammal.html">Mammals</a>
+                        <a href="bird.html">Birds</a>
+                        <a href="reptile.html">Reptiles</a>
+                        <a href="amphibian.html">Amphibians</a>
+                        <a href="fish.html">Fishes</a>
+                        <a href="invertebrate.html">Invertebrates</a>
+                    </div>
+                </div>
+                <a href="quiz1.html" class="navbar" active-color="#0077b6">Quiz</a>
+            </div>
+            <span class="nav-indicator"></span>
+        </nav>
+    </div>
+    <h2>Quiz: Fill in the Blanks</h2>
+    <div class="quiz-container">
+        <div class="question-container">
+            <span id="question"></span>
+            <input type="text" id="answer-input" placeholder="Fill in the blank..." />
+        </div>
+        <div id="score-display">Score: 0</div>
+        <div id="animal-container">
+            <img id="animal" src="https://i.pinimg.com/originals/6c/94/26/6c9426e38d971a3b37a4dd2db381e92e.png" alt="Animal" />
+        </div>
+        <div id="wrong-answer" class="hidden">Wrong Answer!</div>
+    </div>
+    <div class="button-container">
+        <button id="next-button" class="visible">Next Question</button>
+    </div>
+    </div>
+
+    <script src="Quiz1.js"></script>
+</body>
+</html>
