@@ -209,8 +209,9 @@ body {
 }
 
 .top-center {
-  top: 18%;
+  top: 0;
   left: 50%;
+  bottom: 20px;
   transform: translate(-50%, -50%);
   font-size: 34px;
   font-family: "Lexend", sans-serif;
@@ -387,7 +388,7 @@ p {
 /* Footer */
 
 .footer {
-  background-color: #b8e2c0; /* Dark background for the footer */ /* White text color */
+  background-color: #b8e2c0; /* Dark background for the footer */
   padding: 20px; /* Padding around the footer */
   text-align: center; /* Center align text */
 }
@@ -397,13 +398,23 @@ p {
   margin: 0 auto; /* Center the content */
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
+
 h5 {
   font-family: Lexend;
   font-weight: 500;
   color: black;
   font-size: 16px;
+}
+
+.subscribe, .feedback, .social {
+  flex: 1; /* Allow sections to grow equally */
+  margin: 0 10px; /* Space between sections */
+  min-width: 200px; /* Minimum width for better responsiveness */
+  display: flex; /* Use flexbox for inner content */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align items to the top */
+  height: 100%; /* Ensure all sections take full height */
 }
 
 .subscribe {
@@ -420,7 +431,7 @@ h5 {
 }
 
 .subscribe input[type="email"] {
-  width: 220px;
+  width: 100%; /* Full width for input */
   padding: 10px; /* Padding for the input */
   border: none;
   border-radius: 10px; /* Rounded corners */
@@ -431,7 +442,7 @@ h5 {
   font-weight: 500;
 }
 
-.subscribe button, .feedback button{
+.subscribe button, .feedback button {
   padding: 10px 15px; /* Padding for the button */
   border: none;
   background-color: #7aa482; /* Button color */
@@ -443,12 +454,12 @@ h5 {
   font-weight: 500;
 }
 
-.subscribe button:hover, .feedback button:hover{
+.subscribe button:hover, .feedback button:hover {
   background-color: #5f8666; /* Darker shade on hover */
 }
 
 .feedback textarea {
-  width: 250px;
+  width: 100%; /* Full width for textarea */
   padding: 10px; /* Padding for the input */
   border: none;
   border-radius: 10px; /* Rounded corners */
@@ -459,16 +470,6 @@ h5 {
   font-weight: 500;
 }
 
-.form-feedback {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin: auto;
-}
-
-.form-feedback button{
-  margin-bottom: 20px;
-}
 h5 {
   margin: 15px 0; /* Space above and below headings */
 }
@@ -480,10 +481,6 @@ ul {
 
 ul li {
   margin: 5px 0; /* Space between list items */
-}
-
-.social {
-  margin-top: 20px; /* Space above social section */
 }
 
 .social h5 {
@@ -499,34 +496,36 @@ ul li {
   margin: 0 10px; /* Space between icons */
 }
 
-.social ul li a {
-  color: #fff; /* Icon color */
-  font-size: 24px; /* Icon size */
-  text-decoration: none; /* Remove underline */
-}
-
-.social ul li a:hover {
-  color: #ff5722; /* Change color on hover */
-}
-
 .copyright {
   margin-top: 20px; /* Space above copyright */
   font-size: 9px; /* Smaller font size */
   color: #7aa482;
 }
 
+.social ul li img {
+  width: 50px; /* Set the width of the icons */
+  transition: transform 0.3s; /* Add a transition for hover effect */
+}
+
+.social ul li img:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
 /* Responsive styles */
-@media (max-width: 600px) {
-  .subscribe form {
+@media (max-width: 800px) {
+  .subscribe form, .feedback form {
       flex-direction: column; /* Stack input and button on small screens */
   }
 
-  .subscribe input[type="email"] {
+  .subscribe input[type="email"], .feedback textarea {
       width: 100%; /* Full width for input */
       margin-bottom: 10px; /* Space below input */
   }
 
-  .subscribe button {
+  .subscribe button, .feedback button {
       width: 100%; /* Full width for button */
+  }  
+  .info{
+    display: block;
   }
 }
