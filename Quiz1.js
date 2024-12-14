@@ -79,15 +79,45 @@ const questions = [
         answer: "forests"
     },
     {
-        question: "The diet of a Panda Bear consists mainly of ",
-        answer: "bamboo"
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
     },
     {
-        question: "The fastest land animal is the ",
-        answer: "cheetah"
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
+    },
+    {
+        question: "The habitat of a Grizzly Bear are the ",
+        answer: "forests"
     }
     // Add more questions as needed
 ];
+
+const TOTAL_QUESTIONS = 10; // Define the total number of questions to reach
 
 function loadQuestion() {
     const questionElement = document.getElementById("question");
@@ -106,30 +136,28 @@ function checkAnswer() {
         scoreDisplay.textContent = `Score: ${score}`; // Update score display
         moveAnimal(); // Move the animal
         nextButton.classList.add("visible"); // Show next button
+
+        // Check if the score has reached the total questions
+        if (score === TOTAL_QUESTIONS) {
+            moveBearToEnd(); // Move the bear to the end
+        }
     } else {
         wrongAnswerDisplay.classList.remove("hidden"); // Show wrong answer message
     }
 }
 
 function moveAnimal() {
-    const distance = (currentQuestionIndex + 1) * 100; // Move 100px for each question
-    animal.style.left = `${distance}px`; // Move the animal
+    const progressBarLength = 1000; // Replace this with the actual width of the progress bar in pixels
+    const distancePerQuestion = progressBarLength / questions.length; // Distance the bear moves per question
+    const distance = (currentQuestionIndex + 1) * distancePerQuestion; // Calculate the cumulative distance
+    animal.style.left = `${distance}px`; // Move the animal within the bar
 }
 
-nextButton.addEventListener("click", () => {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion();
-    } else {
-        alert(`Quiz completed! Your score: ${score} out of ${questions.length}`);
-        // Optionally reset the quiz or show results
-        currentQuestionIndex = 0; // Reset to the first question
-        score = 0; // Reset score
-        scoreDisplay.textContent = `Score: ${score}`; // Reset score display
-        loadQuestion(); // Load the first question again
-        animal.style.left = `0px`; // Reset animal position
-    }
-});
+function moveBearToEnd() {
+    const progressBarLength = 1000; // Replace with the actual width of the progress bar in pixels
+    animal.style.left = `${progressBarLength}px`; // Move the bear to the end of the bar
+    alert(`Congratulations! You've answered ${TOTAL_QUESTIONS} questions correctly!`);
+};
 
 // Load the first question
 loadQuestion();

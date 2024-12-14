@@ -170,7 +170,7 @@ body {
   border-radius: 15px;
   background-color: snow;
   font-family: "Lexend";
-  width: 50%;
+  width: 1030px;
   margin-top: 20px;
 }
 
@@ -246,12 +246,13 @@ border: 2px solid #689ea7;
 #animal-container {
   margin-top: 20px;
   position: relative;
-  width: 100%;
+  width: 1013px;
   height: 20px; /* Adjust height as needed */
   background-image: url('https://t3.ftcdn.net/jpg/01/89/65/62/360_F_189656244_Z8CvqnmXU50rO0vwTLSPF5y3aUn1Pszp.jpg');
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
+  justify-self: center;
 }
 
 #animal {
