@@ -159,7 +159,20 @@ body {
 
 @media (max-width: 580px) {
   .navigationbar {
-      overflow: auto;
+    overflow: auto;
+  }
+
+  .navbar {/* Reduce padding */
+    font-size: 12px; /* Reduce font size */
+  }
+
+  .nav-icon {
+    width: 25px; /* Adjust icon size */
+    height: 25px; /* Adjust icon size */ /* Adjust margin */
+  }
+
+  .dropdown-content {
+    min-width: 100px; /* Adjust dropdown width */
   }
 }
 
@@ -415,7 +428,7 @@ p {
     column-gap: 0;
   }
   .learning-library1 .block{
-    width: 70%;
+    width: 95%;
     margin-top: 20px;
     margin: 20px auto;
   }
