@@ -137,7 +137,7 @@ body {
   height: 5px;
   background-color: #dfe2ea; 
   border-radius: 8px 8px 0 0;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   transition: 0.3s;
 }
 
@@ -162,17 +162,17 @@ body {
     overflow: auto;
   }
 
-  .navbar {/* Reduce padding */
-    font-size: 13px; /* Reduce font size */
+  .navbar {
+    font-size: 13px;
   }
 
   .nav-icon {
-    width: 25px; /* Adjust icon size */
-    height: 25px; /* Adjust icon size */ /* Adjust margin */
+    width: 25px;
+    height: 25px;
   }
 
   .dropdown-content {
-    min-width: 100px; /* Adjust dropdown width */
+    min-width: 100px; 
   }
 }
 
@@ -180,7 +180,7 @@ body {
 
 .top-gallery {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap; 
   justify-content: center;
   align-items: center;
   padding-bottom: 10px;
@@ -188,7 +188,7 @@ body {
 
 .gallery {
   margin: 15px;
-  width: calc(33.33% - 30px); /* Three items per row with margin */
+  width: calc(32% - 30px);
   height: 350px; 
   color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -211,16 +211,15 @@ body {
   margin-top: 35px;
 }
 
-/* Responsive styles */
 @media (max-width: 800px) {
   .gallery {
-    width: calc(50% - 30px); /* Two items per row on medium screens */
+    width: calc(50% - 30px);
   }
 }
 
 @media (max-width: 500px) {
   .gallery {
-    width: calc(100% - 30px); /* One item per row on small screens */
+    width: calc(100% - 30px);
   }
 }
 
@@ -293,7 +292,6 @@ body {
 
 
 /* TITLE OVERLAY */
-
 .overlay {
   position: absolute;
   bottom: 0;
@@ -373,6 +371,7 @@ p {
   border-radius: 12px;
   width: calc(40% - 40px);
 }
+
 .learning-library1 .block:nth-child(3) {
   width: 40%;
   margin-top: 20px;
@@ -437,17 +436,16 @@ p {
   }
 }
 
-/* Footer */
-
+/* FOOTER */
 .footer {
-  background-color: #b8e2c0; /* Dark background for the footer */
-  padding: 20px; /* Padding around the footer */
-  text-align: center; /* Center align text */
+  background-color: #b8e2c0; 
+  padding: 20px; 
+  text-align: center; 
 }
 
 .info {
-  width: 90%; /* Max width for the content */
-  margin: 0 auto; /* Center the content */
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
 }
@@ -460,32 +458,32 @@ h5 {
 }
 
 .subscribe, .feedback, .social {
-  flex: 1; /* Allow sections to grow equally */
-  margin: 0 20px; /* Space between sections */
-  min-width: 200px; /* Minimum width for better responsiveness */
-  display: flex; /* Use flexbox for inner content */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: flex-start; /* Align items to the top */
-  height: 100%; /* Ensure all sections take full height */
+  flex: 1; 
+  margin: 0 20px;
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  height: 100%;
 }
 
 .subscribe {
-  margin-bottom: 20px; /* Space below the subscribe section */
+  margin-bottom: 20px;
 }
 
 
 .subscribe form, .feedback form{
-  display: flex; /* Flexbox for input and button */
+  display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .subscribe input[type="email"], .feedback input[type="email"] {
-  width: 100%; /* Full width for input */
-  padding: 10px; /* Padding for the input */
+  width: 100%; 
+  padding: 10px;
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  outline: 1px solid; /* Remove outline */
+  border-radius: 10px; 
+  outline: 1px solid; 
   outline-color: #7aa482;
   font-family: Lexend;
   font-size: 12px;
@@ -494,12 +492,12 @@ h5 {
 
 .subscribe button, .feedback button {
   width: 100%;
-  padding: 10px 15px; /* Padding for the button */
+  padding: 10px 15px; 
   border: none;
-  background-color: #7aa482; /* Button color */
-  color: #fff; /* Button text color */
-  border-radius: 25px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #7aa482; 
+  color: #fff; 
+  border-radius: 25px;
+  cursor: pointer; 
   font-family: Lexend;
   font-size: 12px;
   font-weight: 500;
@@ -507,15 +505,15 @@ h5 {
 }
 
 .subscribe button:hover, .feedback button:hover {
-  background-color: #5f8666; /* Darker shade on hover */
+  background-color: #5f8666;
 }
 
 .feedback textarea {
-  width: 100%; /* Full width for textarea */
-  padding: 10px; /* Padding for the input */
+  width: 100%;
+  padding: 10px; 
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  outline: 1px solid; /* Remove outline */
+  border-radius: 10px;
+  outline: 1px solid;
   outline-color: #7aa482;
   font-family: Lexend;
   font-size: 12px;
@@ -523,7 +521,7 @@ h5 {
 }
 
 h5 {
-  margin: 15px 0; /* Space above and below headings */
+  margin: 15px 0; 
 }
 
 h6 {
@@ -535,55 +533,55 @@ h6 {
 }
 
 ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
+  list-style-type: none;
+  padding: 0; 
 }
 
 ul li {
-  margin: 5px 0; /* Space between list items */
+  margin: 5px 0; 
 }
 
 .social h5 {
-  margin-bottom: 10px; /* Space below social heading */
+  margin-bottom: 10px; 
 }
 
 .social ul {
-  display: flex; /* Flexbox for social icons */
-  justify-content: center; /* Center align icons */
+  display: flex;
+  justify-content: center;
 }
 
 .social ul li {
-  margin: 0 10px; /* Space between icons */
+  margin: 0 10px; 
 }
 
 .copyright {
-  margin-top: 20px; /* Space above copyright */
-  font-size: 9px; /* Smaller font size */
+  margin-top: 20px;
+  font-size: 9px; 
   color: #7aa482;
 }
 
 .social ul li img {
-  width: 60px; /* Set the width of the icons */
-  transition: transform 0.3s; /* Add a transition for hover effect */
+  width: 60px;
+  transition: transform 0.3s; 
 }
 
 .social ul li img:hover {
-  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  transform: scale(1.1); 
 }
 
-/* Responsive styles */
+
 @media (max-width: 800px) {
   .subscribe form, .feedback form {
-      flex-direction: column; /* Stack input and button on small screens */
+      flex-direction: column; 
   }
 
   .subscribe input[type="email"], .feedback textarea {
-      width: 100%; /* Full width for input */
-      margin-bottom: 10px; /* Space below input */
+      width: 100%;
+      margin-bottom: 10px;
   }
 
   .subscribe button, .feedback button {
-      width: 100%; /* Full width for button */
+      width: 100%; 
   }  
   .info{
     display: block;

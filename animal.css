@@ -12,6 +12,7 @@ body {
   background-color: #CFFCFA;
 }
 
+/*NAVBAR*/
 .navigationbar {
   text-align: center;
   display: flex;
@@ -138,7 +139,7 @@ body {
   height: 5px;
   background-color: #dfe2ea; 
   border-radius: 8px 8px 0 0;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   transition: 0.3s;
 }
 
@@ -163,22 +164,21 @@ body {
     overflow: auto;
   }
 
-  .navbar {/* Reduce padding */
-    font-size: 13px; /* Reduce font size */
+  .navbar {
+    font-size: 13px; 
   }
 
   .nav-icon {
-    width: 25px; /* Adjust icon size */
-    height: 25px; /* Adjust icon size */ /* Adjust margin */
+    width: 25px; 
+    height: 25px; 
   }
 
   .dropdown-content {
-    min-width: 100px; /* Adjust dropdown width */
+    min-width: 100px;
   }
 }
 
 /* BANNER */
-
 .top-center {
     position: absolute;
     top: 18%;
@@ -225,7 +225,6 @@ body {
 }
 
 /* TITLE */
-
 .skibidi {
   background-color: #CFFCFA;
   height: 140px;
@@ -249,7 +248,6 @@ body {
 
 
 /* DESCRIPTION */
-
 .colored-bg {
   width: 100%;
   height: 100%;
@@ -258,22 +256,21 @@ body {
 
 .flexbox-white-bg {
   border: 1px solid #ddd;
-  background-color: white; /* Blue background */
-  width: calc(60% - 10px); /* Set width to 90% */
-  margin: auto; /* Center horizontally */
-  border-radius: 10px; /* Set border radius to 10px */
-  padding: 10px; /* Add padding to create space around the content */
+  background-color: white;
+  width: calc(60% - 10px); 
+  margin: auto; 
+  border-radius: 10px; 
+  padding: 10px;
 }
 
 .desc-flexbox {
   display: flex;
   flex-direction: column;
-  padding: 20px; /* Padding inside each section */ /* Make sure the desc-flexbox takes up the full width of the flexbox-bg */
-  margin-bottom: 0; /* Remove bottom margin to avoid gaps */
+  padding: 20px;
+  margin-bottom: 0; 
 }
 
 
-/* Header styles */
 .desc-flexbox-header h2 {
   background-color: #689ea7;
   padding: 12px;
@@ -285,7 +282,6 @@ body {
   color: white;
 }
 
-/* Paragraph styles */
 .desc-flexbox-para {
   padding: 5px;
 }
@@ -299,28 +295,28 @@ body {
 }
 
 .image-white-bg {
-  background-color: white; /* White background */
-  border: 1px solid #ddd; /* Light gray border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding inside the image container */
+  background-color: white; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px; 
   width: 100%;
-  display: flex; /* Flexbox for image and text */
+  display: flex; 
   flex-direction: column;
 }
 
 .image-ff img {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Slightly rounded image corners */
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; 
   align-items: center;
 }
 
 .text-ff {
   font-family: Lexend;
   font-weight: 500;
-  font-size: 14px; /* Font size for text */
-  color: #4c4c4c; /* Dark gray text color */
-  line-height: 1.5; /* Line height for better readability */
+  font-size: 14px;
+  color: #4c4c4c;
+  line-height: 1.5;
   margin-top: 10px;
 }
 
@@ -352,7 +348,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .desc-flexbox {
-      margin: 10px 0; /* Adjust margin for smaller screens */
+      margin: 10px 0;
   }
   .column {
     display: block;
@@ -468,17 +464,16 @@ hr {
   color: #666;
 }
 
-/* Footer */
-
+/* FOOTER */
 .footer {
-  background-color: #b8e2c0; /* Dark background for the footer */
-  padding: 20px; /* Padding around the footer */
-  text-align: center; /* Center align text */
+  background-color: #b8e2c0; 
+  padding: 20px; 
+  text-align: center; 
 }
 
 .info {
-  width: 90%; /* Max width for the content */
-  margin: 0 auto; /* Center the content */
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
 }
@@ -491,32 +486,32 @@ h5 {
 }
 
 .subscribe, .feedback, .social {
-  flex: 1; /* Allow sections to grow equally */
-  margin: 0 20px; /* Space between sections */
-  min-width: 200px; /* Minimum width for better responsiveness */
-  display: flex; /* Use flexbox for inner content */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: flex-start; /* Align items to the top */
-  height: 100%; /* Ensure all sections take full height */
+  flex: 1; 
+  margin: 0 20px;
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  height: 100%;
 }
 
 .subscribe {
-  margin-bottom: 20px; /* Space below the subscribe section */
+  margin-bottom: 20px;
 }
 
 
 .subscribe form, .feedback form{
-  display: flex; /* Flexbox for input and button */
+  display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .subscribe input[type="email"], .feedback input[type="email"] {
-  width: 100%; /* Full width for input */
-  padding: 10px; /* Padding for the input */
+  width: 100%; 
+  padding: 10px;
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  outline: 1px solid; /* Remove outline */
+  border-radius: 10px; 
+  outline: 1px solid; 
   outline-color: #7aa482;
   font-family: Lexend;
   font-size: 12px;
@@ -525,12 +520,12 @@ h5 {
 
 .subscribe button, .feedback button {
   width: 100%;
-  padding: 10px 15px; /* Padding for the button */
+  padding: 10px 15px; 
   border: none;
-  background-color: #7aa482; /* Button color */
-  color: #fff; /* Button text color */
-  border-radius: 25px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #7aa482; 
+  color: #fff; 
+  border-radius: 25px;
+  cursor: pointer; 
   font-family: Lexend;
   font-size: 12px;
   font-weight: 500;
@@ -538,15 +533,15 @@ h5 {
 }
 
 .subscribe button:hover, .feedback button:hover {
-  background-color: #5f8666; /* Darker shade on hover */
+  background-color: #5f8666;
 }
 
 .feedback textarea {
-  width: 100%; /* Full width for textarea */
-  padding: 10px; /* Padding for the input */
+  width: 100%;
+  padding: 10px; 
   border: none;
-  border-radius: 10px; /* Rounded corners */
-  outline: 1px solid; /* Remove outline */
+  border-radius: 10px;
+  outline: 1px solid;
   outline-color: #7aa482;
   font-family: Lexend;
   font-size: 12px;
@@ -554,7 +549,7 @@ h5 {
 }
 
 h5 {
-  margin: 15px 0; /* Space above and below headings */
+  margin: 15px 0; 
 }
 
 h6 {
@@ -566,56 +561,55 @@ h6 {
 }
 
 ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
+  list-style-type: none;
+  padding: 0; 
 }
 
 ul li {
-  margin: 5px 0; /* Space between list items */
+  margin: 5px 0; 
 }
 
 .social h5 {
-  margin-bottom: 10px; /* Space below social heading */
+  margin-bottom: 10px; 
 }
 
 .social ul {
-  display: flex; /* Flexbox for social icons */
-  justify-content: center; /* Center align icons */
+  display: flex;
+  justify-content: center;
 }
 
 .social ul li {
-  margin: 0 10px; /* Space between icons */
+  margin: 0 10px; 
 }
 
 .copyright {
-  font-family: Lexend;
-  margin-top: 20px; /* Space above copyright */
-  font-size: 16px; /* Smaller font size */
+  margin-top: 20px;
+  font-size: 9px; 
   color: #7aa482;
 }
 
 .social ul li img {
-  width: 60px; /* Set the width of the icons */
-  transition: transform 0.3s; /* Add a transition for hover effect */
+  width: 60px;
+  transition: transform 0.3s; 
 }
 
 .social ul li img:hover {
-  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  transform: scale(1.1); 
 }
 
-/* Responsive styles */
+
 @media (max-width: 800px) {
   .subscribe form, .feedback form {
-      flex-direction: column; /* Stack input and button on small screens */
+      flex-direction: column; 
   }
 
   .subscribe input[type="email"], .feedback textarea {
-      width: 100%; /* Full width for input */
-      margin-bottom: 10px; /* Space below input */
+      width: 100%;
+      margin-bottom: 10px;
   }
 
   .subscribe button, .feedback button {
-      width: 100%; /* Full width for button */
+      width: 100%; 
   }  
   .info{
     display: block;
