@@ -234,21 +234,6 @@ body {
   margin-top: 5px;
 }
 
-.btn-audio {
-  cursor: pointer;
-  background-color: palevioletred;
-  color: white;
-  font-family: Lexend;
-  font-size: 16px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 0;
-}
-
-.btn-audio:hover {
-  background-color: rgb(150, 80, 103);
-}
-
 
 /* DESCRIPTION */
 
@@ -307,7 +292,6 @@ body {
   padding: 20px; /* Padding inside the image container */
   width: 100%;
   display: flex; /* Flexbox for image and text */
-  align-items: center; /* Center items vertically */
   flex-direction: column;
 }
 
@@ -315,14 +299,16 @@ body {
   max-width: 100%; /* Responsive image */
   height: auto; /* Maintain aspect ratio */
   border-radius: 5px; /* Slightly rounded image corners */
+  align-items: center;
 }
 
 .text-ff {
   font-family: Lexend;
   font-weight: 500;
   font-size: 14px; /* Font size for text */
-  color: #333; /* Dark gray text color */
+  color: #4c4c4c; /* Dark gray text color */
   line-height: 1.5; /* Line height for better readability */
+  margin-top: 10px;
 }
 
 .column {
@@ -469,4 +455,157 @@ hr {
   color: #666;
 }
 
+/* Footer */
+
+.footer {
+  background-color: #b8e2c0; /* Dark background for the footer */
+  padding: 20px; /* Padding around the footer */
+  text-align: center; /* Center align text */
+}
+
+.info {
+  width: 90%; /* Max width for the content */
+  margin: 0 auto; /* Center the content */
+  display: flex;
+  flex-direction: row;
+}
+
+h5 {
+  font-family: Lexend;
+  font-weight: 500;
+  color: black;
+  font-size: 16px;
+}
+
+.subscribe, .feedback, .social {
+  flex: 1; /* Allow sections to grow equally */
+  margin: 0 20px; /* Space between sections */
+  min-width: 200px; /* Minimum width for better responsiveness */
+  display: flex; /* Use flexbox for inner content */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align items to the top */
+  height: 100%; /* Ensure all sections take full height */
+}
+
+.subscribe {
+  margin-bottom: 20px; /* Space below the subscribe section */
+}
+
+
+.subscribe form, .feedback form{
+  display: flex; /* Flexbox for input and button */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subscribe input[type="email"], .feedback input[type="email"] {
+  width: 100%; /* Full width for input */
+  padding: 10px; /* Padding for the input */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  outline: 1px solid; /* Remove outline */
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.subscribe button, .feedback button {
+  width: 100%;
+  padding: 10px 15px; /* Padding for the button */
+  border: none;
+  background-color: #7aa482; /* Button color */
+  color: #fff; /* Button text color */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+  transition: .3s ease;
+}
+
+.subscribe button:hover, .feedback button:hover {
+  background-color: #5f8666; /* Darker shade on hover */
+}
+
+.feedback textarea {
+  width: 100%; /* Full width for textarea */
+  padding: 10px; /* Padding for the input */
+  border: none;
+  border-radius: 10px; /* Rounded corners */
+  outline: 1px solid; /* Remove outline */
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+h5 {
+  margin: 15px 0; /* Space above and below headings */
+}
+
+h6 {
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 500;
+  color: #35593c;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+}
+
+ul li {
+  margin: 5px 0; /* Space between list items */
+}
+
+.social h5 {
+  margin-bottom: 10px; /* Space below social heading */
+}
+
+.social ul {
+  display: flex; /* Flexbox for social icons */
+  justify-content: center; /* Center align icons */
+}
+
+.social ul li {
+  margin: 0 10px; /* Space between icons */
+}
+
+.copyright {
+  font-family: Lexend;
+  margin-top: 20px; /* Space above copyright */
+  font-size: 16px; /* Smaller font size */
+  color: #7aa482;
+}
+
+.social ul li img {
+  width: 60px; /* Set the width of the icons */
+  transition: transform 0.3s; /* Add a transition for hover effect */
+}
+
+.social ul li img:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .subscribe form, .feedback form {
+      flex-direction: column; /* Stack input and button on small screens */
+  }
+
+  .subscribe input[type="email"], .feedback textarea {
+      width: 100%; /* Full width for input */
+      margin-bottom: 10px; /* Space below input */
+  }
+
+  .subscribe button, .feedback button {
+      width: 100%; /* Full width for button */
+  }  
+  .info{
+    display: block;
+  }
+}
 

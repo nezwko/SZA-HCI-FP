@@ -163,19 +163,19 @@ body {
   }
 }
 
-/*GALLERY*/
+/* GALLERY */
 
-.top-gallery{
+.top-gallery {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: center;
   align-items: center;
   padding-bottom: 10px;
 }
 
 .gallery {
-  display: inline-block;
   margin: 15px;
-  width: 400px; 
+  width: calc(33.33% - 30px); /* Three items per row with margin */
   height: 350px; 
   color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -198,6 +198,19 @@ body {
   margin-top: 35px;
 }
 
+/* Responsive styles */
+@media (max-width: 800px) {
+  .gallery {
+    width: calc(50% - 30px); /* Two items per row on medium screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    width: calc(100% - 30px); /* One item per row on small screens */
+  }
+}
+
 /* BANNER */
 .banner{
   background-image: url(bgbanner.png);
@@ -211,7 +224,7 @@ body {
 .top-center {
   top: 0;
   left: 50%;
-  bottom: 20px;
+  margin-bottom: 100px;
   transform: translate(-50%, -50%);
   font-size: 34px;
   font-family: "Lexend", sans-serif;
@@ -252,6 +265,19 @@ body {
   background-color: black;
   color: white;
 }
+
+@media screen and (max-width: 750px) {
+  .banner{background-image: url(anibanner.png);} 
+
+  .top-center {
+    margin-bottom: 10px;
+  }
+  
+  .bottom-left {
+    top: 10%;
+  }
+}
+
 
 /* TITLE OVERLAY */
 
@@ -362,6 +388,19 @@ p {
 .learning-library1 h3{
   margin-top: 20px;
 }
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.top img {
+  width: 50px;
+  margin-top:10px;
+}
 @media screen and (max-width: 1000px) {
   .learning-library1 .block{
     width: calc(50% - 40px);
@@ -409,7 +448,7 @@ h5 {
 
 .subscribe, .feedback, .social {
   flex: 1; /* Allow sections to grow equally */
-  margin: 0 10px; /* Space between sections */
+  margin: 0 20px; /* Space between sections */
   min-width: 200px; /* Minimum width for better responsiveness */
   display: flex; /* Use flexbox for inner content */
   flex-direction: column; /* Stack content vertically */
@@ -421,16 +460,14 @@ h5 {
   margin-bottom: 20px; /* Space below the subscribe section */
 }
 
-.subscribe h5 {
-  margin-bottom: 10px; /* Space below the heading */
-}
 
-.subscribe form {
+.subscribe form, .feedback form{
   display: flex; /* Flexbox for input and button */
+  flex-direction: column;
   gap: 10px;
 }
 
-.subscribe input[type="email"] {
+.subscribe input[type="email"], .feedback input[type="email"] {
   width: 100%; /* Full width for input */
   padding: 10px; /* Padding for the input */
   border: none;
@@ -443,6 +480,7 @@ h5 {
 }
 
 .subscribe button, .feedback button {
+  width: 100%;
   padding: 10px 15px; /* Padding for the button */
   border: none;
   background-color: #7aa482; /* Button color */
@@ -452,6 +490,7 @@ h5 {
   font-family: Lexend;
   font-size: 12px;
   font-weight: 500;
+  transition: .3s ease;
 }
 
 .subscribe button:hover, .feedback button:hover {
@@ -472,6 +511,14 @@ h5 {
 
 h5 {
   margin: 15px 0; /* Space above and below headings */
+}
+
+h6 {
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 500;
+  color: #35593c;
+  padding: 5px;
 }
 
 ul {
@@ -503,7 +550,7 @@ ul li {
 }
 
 .social ul li img {
-  width: 50px; /* Set the width of the icons */
+  width: 60px; /* Set the width of the icons */
   transition: transform 0.3s; /* Add a transition for hover effect */
 }
 
