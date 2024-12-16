@@ -12,6 +12,7 @@ body {
   background-color: #CFFCFA;
 }
 
+/*NAVBAR*/
 .navigationbar {
   text-align: center;
   display: flex;
@@ -138,7 +139,7 @@ body {
   height: 5px;
   background-color: #dfe2ea; 
   border-radius: 8px 8px 0 0;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   transition: 0.3s;
 }
 
@@ -160,12 +161,24 @@ body {
 
 @media (max-width: 580px) {
   .navigationbar {
-      overflow: auto;
+    overflow: auto;
+  }
+
+  .navbar {
+    font-size: 13px; 
+  }
+
+  .nav-icon {
+    width: 25px; 
+    height: 25px; 
+  }
+
+  .dropdown-content {
+    min-width: 100px;
   }
 }
 
 /* BANNER */
-
 .top-center {
     position: absolute;
     top: 18%;
@@ -212,7 +225,6 @@ body {
 }
 
 /* TITLE */
-
 .skibidi {
   background-color: #CFFCFA;
   height: 140px;
@@ -234,24 +246,8 @@ body {
   margin-top: 5px;
 }
 
-.btn-audio {
-  cursor: pointer;
-  background-color: palevioletred;
-  color: white;
-  font-family: Lexend;
-  font-size: 16px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 0;
-}
-
-.btn-audio:hover {
-  background-color: rgb(150, 80, 103);
-}
-
 
 /* DESCRIPTION */
-
 .colored-bg {
   width: 100%;
   height: 100%;
@@ -260,22 +256,21 @@ body {
 
 .flexbox-white-bg {
   border: 1px solid #ddd;
-  background-color: white; /* Blue background */
-  width: calc(60% - 10px); /* Set width to 90% */
-  margin: auto; /* Center horizontally */
-  border-radius: 10px; /* Set border radius to 10px */
-  padding: 10px; /* Add padding to create space around the content */
+  background-color: white;
+  width: calc(60% - 10px); 
+  margin: auto; 
+  border-radius: 10px; 
+  padding: 10px;
 }
 
 .desc-flexbox {
   display: flex;
   flex-direction: column;
-  padding: 20px; /* Padding inside each section */ /* Make sure the desc-flexbox takes up the full width of the flexbox-bg */
-  margin-bottom: 0; /* Remove bottom margin to avoid gaps */
+  padding: 20px;
+  margin-bottom: 0; 
 }
 
 
-/* Header styles */
 .desc-flexbox-header h2 {
   background-color: #689ea7;
   padding: 12px;
@@ -287,7 +282,6 @@ body {
   color: white;
 }
 
-/* Paragraph styles */
 .desc-flexbox-para {
   padding: 5px;
 }
@@ -301,28 +295,29 @@ body {
 }
 
 .image-white-bg {
-  background-color: white; /* White background */
-  border: 1px solid #ddd; /* Light gray border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding inside the image container */
+  background-color: white; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px; 
   width: 100%;
-  display: flex; /* Flexbox for image and text */
-  align-items: center; /* Center items vertically */
+  display: flex; 
   flex-direction: column;
 }
 
 .image-ff img {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Slightly rounded image corners */
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; 
+  align-items: center;
 }
 
 .text-ff {
   font-family: Lexend;
   font-weight: 500;
-  font-size: 14px; /* Font size for text */
-  color: #333; /* Dark gray text color */
-  line-height: 1.5; /* Line height for better readability */
+  font-size: 14px;
+  color: #4c4c4c;
+  line-height: 1.5;
+  margin-top: 10px;
 }
 
 .column {
@@ -353,7 +348,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .desc-flexbox {
-      margin: 10px 0; /* Adjust margin for smaller screens */
+      margin: 10px 0;
   }
   .column {
     display: block;
@@ -469,4 +464,155 @@ hr {
   color: #666;
 }
 
+/* FOOTER */
+.footer {
+  background-color: #b8e2c0; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+.info {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+h5 {
+  font-family: Lexend;
+  font-weight: 500;
+  color: black;
+  font-size: 16px;
+}
+
+.subscribe, .feedback, .social {
+  flex: 1; 
+  margin: 0 20px;
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  height: 100%;
+}
+
+.subscribe {
+  margin-bottom: 20px;
+}
+
+
+.subscribe form, .feedback form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subscribe input[type="email"], .feedback input[type="email"] {
+  width: 100%; 
+  padding: 10px;
+  border: none;
+  border-radius: 10px; 
+  outline: 1px solid; 
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.subscribe button, .feedback button {
+  width: 100%;
+  padding: 10px 15px; 
+  border: none;
+  background-color: #7aa482; 
+  color: #fff; 
+  border-radius: 25px;
+  cursor: pointer; 
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+  transition: .3s ease;
+}
+
+.subscribe button:hover, .feedback button:hover {
+  background-color: #5f8666;
+}
+
+.feedback textarea {
+  width: 100%;
+  padding: 10px; 
+  border: none;
+  border-radius: 10px;
+  outline: 1px solid;
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+h5 {
+  margin: 15px 0; 
+}
+
+h6 {
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 500;
+  color: #35593c;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0; 
+}
+
+ul li {
+  margin: 5px 0; 
+}
+
+.social h5 {
+  margin-bottom: 10px; 
+}
+
+.social ul {
+  display: flex;
+  justify-content: center;
+}
+
+.social ul li {
+  margin: 0 10px; 
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 9px; 
+  color: #7aa482;
+}
+
+.social ul li img {
+  width: 60px;
+  transition: transform 0.3s; 
+}
+
+.social ul li img:hover {
+  transform: scale(1.1); 
+}
+
+
+@media (max-width: 800px) {
+  .subscribe form, .feedback form {
+      flex-direction: column; 
+  }
+
+  .subscribe input[type="email"], .feedback textarea {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .subscribe button, .feedback button {
+      width: 100%; 
+  }  
+  .info{
+    display: block;
+  }
+}
 
