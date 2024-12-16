@@ -282,6 +282,7 @@ border: 2px solid #689ea7;
 }
 
 .hero h2 {
+  text-align: center;
   color:#689ea7;
   margin-top: 150px;
   justify-self: center;
