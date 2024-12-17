@@ -137,9 +137,12 @@ document.getElementById("restart-button").addEventListener("click", () => {
 });
 
 // Close the modal when the "Cancel" button is clicked
-document.getElementById("cancel-button").addEventListener("click", () => {
-    document.getElementById("reset-modal").style.display = "none"; // Hide the modal
-});
+function redirectToPage() {
+    window.location.href = "Quizzes.html"; // Change to your desired HTML file
+}
+
+// Add event listener to the Cancel button
+document.getElementById("finish-button").addEventListener("click", redirectToPage);
 
 // Load the first question
 loadQuestion();

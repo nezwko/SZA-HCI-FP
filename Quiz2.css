@@ -312,7 +312,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-#cancel-button {
+#finish-button {
   font-family: "Lexend";
   color: #689ea7;
   font-weight: 500;
@@ -324,7 +324,7 @@ body {
   font-size: 20px;
 }
 
-#cancel-button:hover {
+#finish-button:hover {
   font-family: "Lexend";
   color: white;
   font-weight: 500;
