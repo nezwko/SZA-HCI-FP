@@ -224,12 +224,14 @@ margin-bottom: 20px;
 
 .flexbox-white-bg {
 border: 1px solid #ddd;
+box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
 background-color: white;
 width: calc(50% - 50px); 
 max-width: 95%;
 border-radius: 20px; 
 padding: 10px;
 margin: 0 10px;
+margin-bottom: 60px;
 }
 
 .desc-flexbox {
@@ -243,7 +245,8 @@ margin-bottom: 0;
 .desc-flexbox-header h2 {
 background-color: #689ea7;
 padding: 30px;
-border-radius: 8px;;
+border-radius: 24px;
+box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
 font-family: Lexend;
 font-weight: 500;
 font-size: 18px;
@@ -289,7 +292,7 @@ margin-top: 10px;
 .flexbox-white-bg {
   width: 500px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 60px;
 }
 
 }
