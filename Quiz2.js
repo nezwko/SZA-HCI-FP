@@ -1,10 +1,6 @@
 // DROPDOWN
-
-const indicator = document.querySelector(".nav-indicator");
 const items = document.querySelectorAll(".navbar");
 const dropdowns = document.querySelectorAll('.dropdown-toggle');
-
-
 
 function handleIndicator(el) {
     // Remove active class from all items
@@ -12,12 +8,7 @@ function handleIndicator(el) {
         item.classList.remove("active");
         item.removeAttribute("style");
     });
-
-    // Set the width and position of the indicator
-    indicator.style.width = `${el.offsetWidth}px`;
-    indicator.style.left = `${el.getBoundingClientRect().left - document.querySelector('.top-navbar').getBoundingClientRect().left}px`; // Adjust for navbar padding
-    indicator.style.backgroundColor = el.getAttribute("active-color");
-
+    
     // Add active class to the clicked item
     el.classList.add("active");
     el.style.color = el.getAttribute("active-color");
