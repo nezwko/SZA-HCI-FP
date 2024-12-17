@@ -227,7 +227,7 @@ border: 1px solid #ddd;
 box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
 background-color: white;
 width: calc(50% - 50px); 
-max-width: 500px;
+max-width: 95%;
 border-radius: 20px; 
 padding: 10px;
 margin: 0 10px;
