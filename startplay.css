@@ -127,14 +127,15 @@ body {
     min-width: 100px; 
   }
 }
+
 /* BANNER */
 .banner{
-  background-image: url(bgbanner.png);
+  background-image: url(playbg.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
-  padding: 200px 50px;
-  height: 500px;
+  padding: 300px 50px;
+  height: fit-content;
 }
 
 .instructions {
@@ -163,7 +164,6 @@ h3 {
 }
 
 p {
-  font-family: Lexend;
   font-size: 16px;
   padding: 4px;
 }
@@ -175,16 +175,18 @@ p {
   justify-content: center;
   margin: auto;
   flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-  margin-top: 40px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
-.flex button {
+.button-link {
+  display: inline-block; /* Make it behave like a button */
   height: 50px;
   background-color: #689ea7;
   color: white;
   font-size: 16px;
   padding: 12px 24px;
+  text-decoration: none; /* Remove underline */
   border: none;
   cursor: pointer;
   border-radius: 24px;
@@ -195,7 +197,7 @@ p {
   margin-top: 15px;
 }
 
-.flex button:hover {
+.button-link:hover {
   background-color: black;
   color: white;
 }
@@ -227,10 +229,11 @@ p {
   }
 
   .banner {
-    background-image: none;
+    background-image: url(title.png);
     background-color: #CFFCFA;
-    height: 300px;
+    padding: 150px 20px;
   }
+
   .instructions {
       width: calc(100% - 40px); /* Full width on smaller screens */
       margin-left: 0; /* Remove left margin */

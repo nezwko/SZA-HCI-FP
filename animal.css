@@ -535,8 +535,12 @@ ul li {
 
 .copyright {
   margin-top: 20px;
-  font-size: 9px; 
+  font-size: 18px; 
   color: #7aa482;
+}
+
+p {
+  font-family: Lexend;
 }
 
 .social ul li img {
