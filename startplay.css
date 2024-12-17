@@ -9,6 +9,7 @@
 body {
   background-size: 100%;
 }
+
 .navigationbar {
   text-align: center;
   display: flex;
@@ -126,7 +127,6 @@ body {
     min-width: 100px; 
   }
 }
-
 /* BANNER */
 .banner{
     background-image: url(bgbanner.png);
