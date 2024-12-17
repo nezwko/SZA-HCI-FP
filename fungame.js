@@ -146,6 +146,7 @@ document.getElementById('submitGuess').addEventListener('click', function() {
 
     if (userGuess === currentAnimal.name) {
         document.getElementById('next-button').classList.add('visible');
+        document.getElementById('next-button').style.display = 'block';
     } else {
         wrongAnswerDisplay.classList.remove("hidden");
     }

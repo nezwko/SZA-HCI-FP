@@ -251,6 +251,7 @@ button:hover {
     opacity: 0; /* Start as invisible */
     visibility: hidden; /* Hidden from view */
     pointer-events: none; /* Prevent interaction when hidden */
+    display: none;
   }
   
   .button-container {
