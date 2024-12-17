@@ -366,6 +366,7 @@ p {
   justify-content: center;
   margin-top: 20px;
 }
+
 .learning-library1 .block{
   border: 2px solid #689ea7;
   border-radius: 12px;
@@ -390,6 +391,7 @@ p {
   transition: .3s ease;
   margin-bottom: 20px;
 }
+
 .learning-library1 button:hover {
   background-color: black;
   color: white;

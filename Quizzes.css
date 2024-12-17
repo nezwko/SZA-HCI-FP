@@ -261,18 +261,22 @@ margin-top: 5px;
 
 /* DESCRIPTION */
 .colored-bg {
-width: 100%;
-height: 100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 20px;
 margin-top: 20px;
+margin-bottom: 20px;
 }
 
 .flexbox-white-bg {
 border: 1px solid #ddd;
 background-color: white;
-width: calc(60% - 10px); 
-margin: auto; 
-border-radius: 10px; 
+width: calc(50% - 50px); 
+max-width: 500px;
+border-radius: 20px; 
 padding: 10px;
+margin: 0 10px;
 }
 
 .desc-flexbox {
@@ -322,23 +326,17 @@ line-height: 1.5;
 margin-top: 10px;
 }
 
-.column {
-display: flex; 
-gap: 10px; 
-width: 75%;
-margin: auto;
-margin-bottom: 40px;
-}
 
 @media screen and (max-width: 768px) {
-.desc-flexbox {
-    margin: 10px 0;
+
+.colored-bg {
+  display: block;
 }
-.column {
-    display: block;
-}
-.flexbox-white-bg, .gallery-ff {
-    width: 100%;
+
+.flexbox-white-bg {
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 }
