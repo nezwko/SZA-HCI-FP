@@ -146,11 +146,6 @@ body {
   margin-top: 20px;
 }
 
-#animal {
-  width: 100px; /* Adjust size as needed */
-  position: relative;
-  transition: left 0.5s; /* Smooth movement */
-}
 
 #wrong-answer {
   color: red;
@@ -215,24 +210,6 @@ border: 2px solid #689ea7;
   margin-top: 20px;
 }
 
-#animal-container {
-  margin-top: 20px;
-  position: relative;
-  width: 1013px;
-  height: 20px; /* Adjust height as needed */
-  background-image: url('https://t3.ftcdn.net/jpg/01/89/65/62/360_F_189656244_Z8CvqnmXU50rO0vwTLSPF5y3aUn1Pszp.jpg');
-  background-size: cover;
-  border-radius: 10px;
-  overflow: hidden;
-  justify-self: center;
-}
-
-#animal {
-  position: absolute;
-  bottom: 0; /* Align to the bottom of the container */
-  left: 0; /* Start from the left */
-  width: 10px;
-}
 
 #answer-input {
   font-family: "Lexend";

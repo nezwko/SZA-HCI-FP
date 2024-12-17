@@ -259,5 +259,81 @@ body {
   font-weight: 500;
 }
 
+#reset-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#modal-content {
+  font-family: "Lexend";
+  width: 600px;
+  height: 165px;
+  color: white;
+  font-weight: 500;
+  font-size: 26px;
+  background-color: #689ea7;
+  padding: 20px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(21, 22, 24, 0.8);
+}
 
+#restart-button {
+  font-family: "Lexend";
+  color: #689ea7;
+  font-weight: 500;
+  background-color: white;  
+  padding: 10px;
+  border: none;
+  border-radius: 24px;
+  margin-right: 5px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+#restart-button:hover {
+  font-family: "Lexend";
+  color: white;
+  font-weight: 500;
+  background-color: #3b6a72;  
+  padding: 10px;
+  border: none;
+  border-radius: 24px;
+  margin-right: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cancel-button {
+  font-family: "Lexend";
+  color: #689ea7;
+  font-weight: 500;
+  background-color: white;  
+  padding: 10px;
+  border: none;
+  border-radius: 24px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+#cancel-button:hover {
+  font-family: "Lexend";
+  color: white;
+  font-weight: 500;
+  background-color: #3b6a72;  
+  padding: 10px;
+  border: none;
+  border-radius: 24px;
+  margin-left: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

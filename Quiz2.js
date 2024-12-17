@@ -113,21 +113,32 @@ function checkAnswer(selectedIndex) {
     const nextButton = document.getElementById("next-button");
     nextButton.classList.add("visible");
 
-
     options.forEach(option => option.disabled = true); // Disable all options
 }
 
 document.getElementById("next-button").addEventListener("click", () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
-        loadQuestion();
+        loadQuestion(); // Load the next question
     } else {
-        alert(`Quiz completed! Your score: ${score} out of ${questions.length}`);
-        // Optionally reset the quiz or show results
-        currentQuestionIndex = 0; // Reset to the first question
-        score = 0;
-        // Optionally reset the quiz or show results
+        // Display the reset modal with the score when all questions are answered
+        document.getElementById("final-score").textContent = score;
+        document.getElementById("total-questions").textContent = questions.length;
+        document.getElementById("reset-modal").style.display = "flex"; // Show the modal
     }
+});
+
+// Restart the quiz when the "Restart" button is clicked
+document.getElementById("restart-button").addEventListener("click", () => {
+    currentQuestionIndex = 0; // Reset to the first question
+    score = 0; // Reset score
+    loadQuestion(); // Load the first question
+    document.getElementById("reset-modal").style.display = "none"; // Hide the modal
+});
+
+// Close the modal when the "Cancel" button is clicked
+document.getElementById("cancel-button").addEventListener("click", () => {
+    document.getElementById("reset-modal").style.display = "none"; // Hide the modal
 });
 
 // Load the first question

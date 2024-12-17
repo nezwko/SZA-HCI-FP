@@ -57,12 +57,13 @@ window.addEventListener('click', function(event) {
 
 
 let currentQuestionIndex = 0;
-let score = 0; // Initialize score
-const animal = document.getElementById("animal");
+let score = 0;
+let isAnswerCorrect = false; // Flag to track if the answer is correct
 const wrongAnswerDisplay = document.getElementById("wrong-answer");
 const scoreDisplay = document.getElementById("score-display");
 const nextButton = document.getElementById("next-button");
 const answerInput = document.getElementById("answer-input");
+const carrotContainer = document.getElementById("carrot-container"); // Get the carrot container
 
 const questions = [
     {
@@ -118,6 +119,18 @@ function loadQuestion() {
     nextButton.classList.remove("visible"); // Hide next button initially
 }
 
+nextButton.addEventListener("click", function() {
+    currentQuestionIndex++; // Move to the next question
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion(); // Load the next question
+        nextButton.classList.remove("visible"); // Hide the next button again
+    } else {
+        // If there are no more questions, display a completion message
+        alert("You've completed all the questions! Final Score: " + score);
+        nextButton.style.display = "none"; // Hide the next button
+    }
+});
+
 function checkAnswer() {
     const userAnswer = answerInput.value.trim().toLowerCase();
     const correctAnswer = questions[currentQuestionIndex].answer.toLowerCase();
@@ -125,30 +138,22 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         score++; // Increment score for correct answer
         scoreDisplay.textContent = `Score: ${score}`; // Update score display
-        moveAnimal(); // Move the animal
         nextButton.classList.add("visible"); // Show next button
+        addCarrot(); // Add a new carrot after each correct answer
 
-        // Check if the score has reached the total questions
-        if (score === TOTAL_QUESTIONS) {
-            moveBearToEnd(); // Move the bear to the end
-        }
     } else {
         wrongAnswerDisplay.classList.remove("hidden"); // Show wrong answer message
+        isAnswerCorrect = false; // Reset the flag if the answer is wrong
     }
 }
 
-function moveAnimal() {
-    const progressBarLength = 1000; // Replace this with the actual width of the progress bar in pixels
-    const distancePerQuestion = progressBarLength / questions.length; // Distance the bear moves per question
-    const distance = (currentQuestionIndex + 1) * distancePerQuestion; // Calculate the cumulative distance
-    animal.style.left = `${distance}px`; // Move the animal within the bar
+function addCarrot() {
+    const carrotImage = document.createElement("img");
+    carrotImage.src = "https://static.vecteezy.com/system/resources/thumbnails/018/887/875/small_2x/cartoon-carrot-icon-png.png"; // Carrot image URL
+    carrotImage.alt = "Carrot";
+    carrotImage.id = "carrot"; // Assign an ID to the carrot image
+    carrotContainer.appendChild(carrotImage); // Append the carrot image to the container
 }
-
-function moveBearToEnd() {
-    const progressBarLength = 1000; // Replace with the actual width of the progress bar in pixels
-    animal.style.left = `${progressBarLength}px`; // Move the bear to the end of the bar
-    alert(`Congratulations! You've answered ${TOTAL_QUESTIONS} questions correctly!`);
-};
 
 // Load the first question
 loadQuestion();
@@ -156,6 +161,11 @@ loadQuestion();
 // Add event listener for the answer input
 answerInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        checkAnswer(); // Check answer when Enter is pressed
+        if (!isAnswerCorrect) {
+            checkAnswer(); // Check answer when Enter is pressed
+        } else {
+            // If the answer is correct, trigger the next button click to move to the next question
+            nextButton.click(); 
+        }
     }
 });

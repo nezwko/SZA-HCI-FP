@@ -75,8 +75,8 @@ function loadAnimalPart() {
         document.getElementById('next-button').classList.remove('visible');
         createGuessBoxes(currentAnimal.name.length);
     } else {
-        document.getElementById('message').textContent = 'Congratulations! You completed the game!';
-        document.getElementById('next-button').classList.remove('visible');
+        // Show the modal when the game is completed
+        document.getElementById('modal').classList.add('visible');
     }
 }
 
@@ -150,6 +150,7 @@ document.getElementById('next-button').addEventListener('click', function() {
     level++;
     loadAnimalPart();
 });
+
 
 // Add keydown event listener to the document
 document.addEventListener('keydown', handleKeyDown);
