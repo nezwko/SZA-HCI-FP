@@ -143,7 +143,7 @@ body {
   height: 5px;
   background-color: #dfe2ea; 
   border-radius: 8px 8px 0 0;
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   transition: 0.3s;
 }
 
@@ -160,6 +160,26 @@ body {
 
 .dropdown-toggle.active {
   color: #333; 
+}
+
+
+@media (max-width: 580px) {
+  .navigationbar {
+    overflow: auto;
+  }
+
+  .navbar {
+    font-size: 13px;
+  }
+
+  .nav-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .dropdown-content {
+    min-width: 100px; 
+  }
 }
 
 .quiz-container {
