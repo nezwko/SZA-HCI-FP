@@ -9,6 +9,7 @@
 body {
   background-size: 100%;
 }
+
 .navigationbar {
   text-align: center;
   display: flex;
@@ -129,88 +130,273 @@ body {
 
 /* BANNER */
 .banner{
-    background-image: url(bgbanner.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    padding: 200px 50px;
-    height: 500px;
+  background-image: url(bgbanner.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  padding: 200px 50px;
+  height: 500px;
 }
 
 .instructions {
-    margin-top: 20px;
-    margin-left: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    width: calc(55% - 45px);
-    border: 2px solid #689ea7;
-    font-family: Lexend;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: calc(55% - 45px);
+  border: 2px solid #689ea7;
+  font-family: Lexend;
 }
 
 h2 {
-    font-weight: 900;
-    font-size: 20px;
-    color: #528993;
-    padding: 3px;
+  font-weight: 900;
+  font-size: 20px;
+  color: #528993;
+  padding: 3px;
 }
 
 h3 {
-    font-weight: 700;
-    font-size: 18px;
-    color: #689ea7;  
-    padding: 4px; 
+  font-weight: 700;
+  font-size: 18px;
+  color: #689ea7;  
+  padding: 4px; 
 }
 
 p {
-    font-size: 16px;
-    padding: 4px;
+  font-family: Lexend;
+  font-size: 16px;
+  padding: 4px;
 }
 
 .flex {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  margin: auto;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.flex button{
-    height: 50px;
-    background-color: #689ea7;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 24px;
-    text-align: center;
-    font-family: "Lexend", sans-serif;
-    font-weight: 500;
-    transition: .3s ease;
-    margin-top: 15px;
+.flex button {
+  height: 50px;
+  background-color: #689ea7;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  transition: .3s ease;
+  margin-top: 15px;
 }
 
 .flex button:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 .startbox {
-    margin-top: 20px;
-    margin-left: 20px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    width: calc(25% - 25px);
-    border: 2px solid #689ea7;
-    font-family: Lexend;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: calc(25% - 25px);
+  border: 2px solid #689ea7;
+  font-family: Lexend;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.startbox img{
-    width: calc(90%-80px);
-    border-radius: 12px;
+.startbox img {
+  width: calc(95% - 10px);
+  border-radius: 12px;
+  margin: auto;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .flex {
+    margin-bottom: 20px;
+  }
+
+  .banner {
+    background-image: none;
+    background-color: #CFFCFA;
+    height: 300px;
+  }
+  .instructions {
+      width: calc(100% - 40px); /* Full width on smaller screens */
+      margin-left: 0; /* Remove left margin */
+  }
+
+  .startbox {
+      width: calc(100% - 40px); /* Full width on smaller screens */
+      margin-left: 0; /* Remove left margin */
+  }
+
+  .flex {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+  }
+}
+
+/* FOOTER */
+.footer {
+  background-color: #b8e2c0; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+.info {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+h5 {
+  font-family: Lexend;
+  font-weight: 500;
+  color: black;
+  font-size: 16px;
+}
+
+.subscribe, .feedback, .social {
+  flex: 1; 
+  margin: 0 20px;
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  height: 100%;
+}
+
+.subscribe {
+  margin-bottom: 20px;
+}
+
+
+.subscribe form, .feedback form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subscribe input[type="email"], .feedback input[type="email"] {
+  width: 100%; 
+  padding: 10px;
+  border: none;
+  border-radius: 10px; 
+  outline: 1px solid; 
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.subscribe button, .feedback button {
+  width: 100%;
+  padding: 10px 15px; 
+  border: none;
+  background-color: #7aa482; 
+  color: #fff; 
+  border-radius: 25px;
+  cursor: pointer; 
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+  transition: .3s ease;
+}
+
+.subscribe button:hover, .feedback button:hover {
+  background-color: #5f8666;
+}
+
+.feedback textarea {
+  width: 100%;
+  padding: 10px; 
+  border: none;
+  border-radius: 10px;
+  outline: 1px solid;
+  outline-color: #7aa482;
+  font-family: Lexend;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+h5 {
+  margin: 15px 0; 
+}
+
+h6 {
+  font-family: Lexend;
+  font-size: 14px;
+  font-weight: 500;
+  color: #35593c;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0; 
+}
+
+ul li {
+  margin: 5px 0; 
+}
+
+.social h5 {
+  margin-bottom: 10px; 
+}
+
+.social ul {
+  display: flex;
+  justify-content: center;
+}
+
+.social ul li {
+  margin: 0 10px; 
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 9px; 
+  color: #7aa482;
+}
+
+.social ul li img {
+  width: 60px;
+  transition: transform 0.3s; 
+}
+
+.social ul li img:hover {
+  transform: scale(1.1); 
+}
+
+
+@media (max-width: 800px) {
+  .subscribe form, .feedback form {
+      flex-direction: column; 
+  }
+
+  .subscribe input[type="email"], .feedback textarea {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .subscribe button, .feedback button {
+      width: 100%; 
+  }  
+  .info{
+    display: block;
+  }
+}
+
