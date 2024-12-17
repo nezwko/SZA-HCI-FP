@@ -131,8 +131,8 @@ body {
 .banner{
     background-image: url(bgbanner.png);
     background-repeat: no-repeat;
-    background-size: 100%;
     background-position: center;
+    background-size: 100%;
     padding: 200px 50px;
     height: 500px;
 }
