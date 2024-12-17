@@ -128,7 +128,7 @@ function handleKeyDown(event) {
         event.preventDefault(); // Prevent default form submission
         document.getElementById('submitGuess').click(); // Trigger the submit button click
     }
-}
+};
 
 document.getElementById('submitGuess').addEventListener('click', function() {
     const inputs = document.querySelectorAll('#guessBoxes input');
@@ -146,6 +146,7 @@ document.getElementById('submitGuess').addEventListener('click', function() {
 });
 
 document.getElementById('next-button').addEventListener('click', function() {
+    document.getElementById('next-button').style.display = 'None';
     level++;
     loadAnimalPart();
 });
