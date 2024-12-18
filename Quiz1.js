@@ -59,7 +59,7 @@ window.addEventListener('click', function(event) {
 const questions = [
     { question: "The habitat of a Grizzly Bear is the", answer: "forest" },
     { question: "Lions mostly eat ", answer: "meat" },
-    { question: "The fastest animal in the and is the ", answer: "cheetah" },
+    { question: "The fastest animal in the land is the ", answer: "cheetah" },
     { question: "The animal that is used for its wool is ", answer: "sheep" },
     { question: "The animal whose eggs are most commonly used is ", answer: "chicken" },
     { question: "The animal whose milk is most commonly consumed is ", answer: "cow" },
