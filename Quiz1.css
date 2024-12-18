@@ -8,6 +8,7 @@
 
 body {
     background-color: #CFFCFA;
+    background-image: url('quizbg.png');
     font-family: Lexend;
     margin: 0;
     padding: 0;
@@ -135,18 +136,25 @@ body {
 }
 
 .container {
-   width: 600px;
   margin-top: 150px;
   justify-self: center;
   text-align: center;
+  background-color: white;
+  justify-self: center;
+  text-align: center;
+  width: 800px;
+  height: 300px;
+  border-radius: 24px;
+  padding: 5px;
 }
 
 .progress-container {
-  width: 100%;
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
-  margin: 20px 0;
+  width: 80%;
+  margin: 20px;
+  justify-self: center;
 }
 
 .progress-bar {
@@ -168,12 +176,103 @@ body {
   display: inline-block;
 }
 
-.feedback {
+.feedback.hidden {
   color: red;
-  margin-top: 20px;
-}
-
-.hidden {
+  margin-top: 15px;
   display: none;
 }
 
+.feedback {
+  color: red;
+  margin-top: 15px;
+}
+
+
+.container h1 {
+  color: #76c7c0;
+  justify-self: center;
+  font-size: 60px;
+  margin-top: 30px;
+}
+
+#submit-button {
+  background-color: #689ea7;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 15px;
+    margin: 10px;
+    width: auto;
+    transition: background-color 0.3s ease;
+    font-family: "Lexend";
+    font-weight: 500;
+    font-size: 14px;
+    border: 2px solid #689ea7;
+}
+
+#submit-button:hover {
+  background-color: white;
+  color: #689ea7;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
+}
+
+#next-button.hidden {
+  background-color: #689ea7;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: auto;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
+  opacity: 0; /* Start as invisible */
+  visibility: hidden; /* Hidden from view */
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+#next-button {
+  background-color: #689ea7;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: auto;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
+opacity: 1; /* Fully visible */
+visibility: visible; /* Make it visible */
+pointer-events: auto; /* Allow interaction when visible */
+align-items: center;
+}
+
+#next-button:hover {
+background-color: white;
+color: #689ea7;
+border-radius: 24px;
+padding: 15px;
+margin: 10px;
+width: auto;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-family: "Lexend";
+font-weight: 500;
+font-size: 14px;
+border: 2px solid #689ea7;
+}
