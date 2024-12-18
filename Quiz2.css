@@ -135,9 +135,8 @@ body {
 
 .quiz-container {
   text-align: center;
-  margin: 150px auto; /* Increased margin to avoid overlap */
+  margin: 150px auto;
   margin-bottom: 20px;
-  margin-top: 20px;
   padding: 20px;
   box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
   border-radius: 15px;
@@ -151,6 +150,7 @@ body {
     font-size: 22px;
     margin-bottom: 20px;
     font-family: "Lexend";
+    color: #689ea7;
 }
 
 .options {
@@ -248,18 +248,10 @@ body {
   border: 2px solid #689ea7;
 }
 
-.hero h2 {
-  color:#689ea7;
-  margin: auto;
-  justify-self: center;
-  font-family: "Lexend";
-  font-size: 60px;
-}
-
 .quiz-container h2 {
   font-size: 22px;
   margin-top: 10px;
-  color: black;
+  color: #689ea7;
   font-weight: 500;
 }
 

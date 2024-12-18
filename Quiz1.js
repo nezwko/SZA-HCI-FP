@@ -58,7 +58,7 @@ window.addEventListener('click', function(event) {
 
 const questions = [
     { question: "The habitat of a Grizzly Bear are the ", answer: "forests" },
-    { question: "The capital of France is ", answer: "Paris" },
+    { question: "The dietary of ", answer: "Paris" },
     { question: "Water boils at __ degrees Celsius.", answer: "100" },
     { question: "The Great Wall of China is in __", answer: "China" },
     { question: "The chemical symbol for water is __", answer: "H2O" },
