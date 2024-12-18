@@ -54,18 +54,20 @@ window.addEventListener('click', function(event) {
         }
     });
 });
-
 const animalParts = [
-    { part: 'reptile/snake.jpg', name: 'snake' },
-    { part: 'reptile/seaturtle.jpg', name: 'seaturtle' },
-    { part: 'reptile/gecko.jpg', name: 'gecko' },
-    { part: 'reptile/crocodile.jpg', name: 'crocodile' },
-    { part: 'reptile/lizard.jpg', name: 'lizard' }
+    { part: 'cattailgame.jpg', name: 'cat' },
+    { part: 'giraffeneckgame.jpg', name: 'giraffe' },
+    { part: 'duckfeetgame.jpg', name: 'duck' },
+    { part: 'trunkelephantgame.jpg', name: 'elephant' },
+    { part: 'octopustentaclegame.jpg', name: 'octopus' }
 ];
 
 let currentAnimal = {};
 let level = 0;
+let score = 0; // Initialize score
+let wrongAnswers = []; // To track incorrect answers
 const wrongAnswerDisplay = document.getElementById("wrong-answer");
+const scoreDisplay = document.getElementById("score");
 
 function loadAnimalPart() {
     if (level < animalParts.length) {
@@ -76,7 +78,7 @@ function loadAnimalPart() {
         createGuessBoxes(currentAnimal.name.length);
     } else {
         // Show the modal when the game is completed
-        document.getElementById('modal').classList.add('visible');
+        showModal();
     }
 }
 
@@ -90,7 +92,7 @@ function createGuessBoxes(length) {
         input.dataset.index = i; // Store index for later use
 
         // Add event listener for input event
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             if (input.value.length === 1) { // Check if a character has been entered
                 const nextInput = guessBoxes.children[i + 1];
                 if (nextInput) {
@@ -130,7 +132,7 @@ function handleKeyDown(event) {
     }
 };
 
-document.getElementById('submitGuess').addEventListener('click', function() {
+document.getElementById('submitGuess').addEventListener('click', function () {
     const inputs = document.querySelectorAll('#guessBoxes input');
     let userGuess = '';
     inputs.forEach(input => {
@@ -138,19 +140,74 @@ document.getElementById('submitGuess').addEventListener('click', function() {
     });
 
     if (userGuess === currentAnimal.name) {
-        document.getElementById('next-button').classList.add('visible');
-        document.getElementById('next-button').style.display = 'block';
+        score++; // Increment score for a correct guess
+        updateScoreDisplay(); // Update the score display
     } else {
-        wrongAnswerDisplay.classList.remove("hidden");
+        wrongAnswers.push({
+            question: currentAnimal.part,
+            correctAnswer: currentAnimal.name,
+            userAnswer: userGuess
+        });
     }
+
+    // Allow the player to move to the next question regardless of correctness
+    document.getElementById('next-button').classList.add('visible');
+    document.getElementById('next-button').style.display = 'block';
 });
 
-document.getElementById('next-button').addEventListener('click', function() {
-    document.getElementById('next-button').style.display = 'None';
+document.getElementById('next-button').addEventListener('click', function () {
+    document.getElementById('next-button').style.display = 'none';
     level++;
     loadAnimalPart();
 });
 
+// Function to show the modal
+function showModal() {
+    // Update the modal with the score
+    document.getElementById('final-score').textContent = `Your Score: ${score} out of ${animalParts.length}`;
+
+    const modalContent = document.getElementById('modal-content');
+    const wrongAnswersList = document.createElement('ul');
+
+    wrongAnswers.forEach(answer => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <strong>Question:</strong> <img src="${answer.question}" alt="Animal Part" style="width: 50px; height: auto;"> 
+            <strong>Your Answer:</strong> ${answer.userAnswer || 'No Answer'} 
+            <strong>Correct Answer:</strong> ${answer.correctAnswer}
+        `;
+        wrongAnswersList.appendChild(listItem);
+    });
+
+    modalContent.appendChild(wrongAnswersList);
+
+    document.getElementById('reset-modal').style.display = 'flex'; // Show the modal
+}
+
+
+// Function to restart the game
+function restartQuiz() {
+    level = 0; // Reset level
+    score = 0; // Reset score
+    wrongAnswers = []; // Clear wrong answers
+    updateScoreDisplay(); // Reset the score display
+    document.getElementById('reset-modal').style.display = 'none'; // Hide the modal
+    loadAnimalPart(); // Reload the first animal part
+}
+
+// Function to redirect to startplay.html
+function finishQuiz() {
+    window.location.href = 'startplay.html'; // Redirect to startplay.html
+}
+
+// Function to update the score display
+function updateScoreDisplay() {
+    scoreDisplay.textContent = `Score: ${score}`;
+}
+
+// Attach event listeners for modal buttons
+document.getElementById('restart-button').addEventListener('click', restartQuiz);
+document.getElementById('finish-button').addEventListener('click', finishQuiz);
 
 // Add keydown event listener to the document
 document.addEventListener('keydown', handleKeyDown);

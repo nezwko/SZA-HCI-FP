@@ -66,6 +66,17 @@ const questions = [
         options: ["Fish", "Bird", "Frog", "Lizard"],
         answer: 1
     },
+    {   question: "This animal is known to have water-resistant fur. What is it?",
+        options: ["Swan", "Beaver", "Duck", "Capybara"],
+        answer: 2
+    },
+    {   question: "This animal is known to be the King of the Jungle. What is it?",
+        options: ["Bear", "Tiger", "Cheetah", "Lion"],
+        answer: 3
+    },
+    {   question: "This animal is known to be able to camouflage. What is it?",
+        options: ["Chameleon", "Iguana", "Spider", "Axolotl"],
+        answer: 0 }
     // Add more questions as needed
 ];
 

@@ -31,13 +31,14 @@
                 </div>
             </nav>
         </div>
-    
+
         <div class="container">
             <h1>Fill in the Blanks Quiz</h1>
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
-            
+
+            <!-- Questions -->
             <div class="question">
                 <p>The habitat of a Grizzly Bear is the <input type="text" id="blank1" class="blank" placeholder="Type your answer here" /></p>
             </div>
@@ -68,10 +69,22 @@
             <div class="question">
                 <p>The longest river in the world is the <input type="text" id="blank10" class="blank" placeholder="Type your answer here" /></p>
             </div>
-            
+
+            <!-- Buttons -->
             <button id="submit-button">Submit Answer</button>
-            <button id="next-button" class="hidden">Next Question</button>
+            <button id="next-button">Next Question</button>
             <div id="feedback" class="feedback hidden">Wrong Answer!</div>
+        </div>
+    </div>
+
+    <!-- Modal for Results -->
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <h2>Quiz Results</h2>
+            <p id="final-score"></p>
+            <ul id="wrong-answers-list"></ul>
+            <button id="restart-button">Restart Quiz</button>
+            <button id="finish-button">Finish</button>
         </div>
     </div>
 

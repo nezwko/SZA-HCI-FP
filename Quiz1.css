@@ -7,14 +7,14 @@
 }
 
 body {
-    background-color: #CFFCFA;
-    background-image: url('quizbg.png');
-    font-family: Lexend;
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Full viewport height */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+  background-color: #CFFCFA;
+  background-image: url('quizbg.png');
+  font-family: Lexend;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .navigationbar {
@@ -143,9 +143,10 @@ body {
   justify-self: center;
   text-align: center;
   width: 800px;
-  height: 300px;
+  height: 330px;
   border-radius: 24px;
   padding: 5px;
+  display: flex;
 }
 
 .progress-container {
@@ -187,7 +188,6 @@ body {
   margin-top: 15px;
 }
 
-
 .container h1 {
   color: #76c7c0;
   justify-self: center;
@@ -197,17 +197,17 @@ body {
 
 #submit-button {
   background-color: #689ea7;
-    color: white;
-    border: none;
-    border-radius: 24px;
-    padding: 15px;
-    margin: 10px;
-    width: auto;
-    transition: background-color 0.3s ease;
-    font-family: "Lexend";
-    font-weight: 500;
-    font-size: 14px;
-    border: 2px solid #689ea7;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: auto;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
 }
 
 #submit-button:hover {
@@ -225,24 +225,6 @@ body {
   border: 2px solid #689ea7;
 }
 
-#next-button.hidden {
-  background-color: #689ea7;
-  color: white;
-  border: none;
-  border-radius: 24px;
-  padding: 15px;
-  margin: 10px;
-  width: auto;
-  transition: background-color 0.3s ease;
-  font-family: "Lexend";
-  font-weight: 500;
-  font-size: 14px;
-  border: 2px solid #689ea7;
-  opacity: 0; /* Start as invisible */
-  visibility: hidden; /* Hidden from view */
-  pointer-events: none; /* Prevent interaction when hidden */
-}
-
 #next-button {
   background-color: #689ea7;
   color: white;
@@ -256,23 +238,72 @@ body {
   font-weight: 500;
   font-size: 14px;
   border: 2px solid #689ea7;
-opacity: 1; /* Fully visible */
-visibility: visible; /* Make it visible */
-pointer-events: auto; /* Allow interaction when visible */
-align-items: center;
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it visible */
+  pointer-events: auto; /* Allow interaction when visible */
+  align-items: center;
 }
 
 #next-button:hover {
-background-color: white;
-color: #689ea7;
-border-radius: 24px;
-padding: 15px;
-margin: 10px;
-width: auto;
-cursor: pointer;
-transition: background-color 0.3s ease;
-font-family: "Lexend";
-font-weight: 500;
-font-size: 14px;
-border: 2px solid #689ea7;
+  background-color: white;
+  color: #689ea7;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
+}
+
+#modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#modal.hidden {
+  display: none; /* Keeps it hidden */
+}
+
+#modal-content {
+  background-color: white;
+  border-radius: 24px;
+  padding: 30px;
+  text-align: center;
+  width: 500px;
+}
+
+#restart-button,
+#finish-button {
+  background-color: #689ea7;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 15px;
+  margin: 10px;
+  width: auto;
+  transition: background-color 0.3s ease;
+  font-family: "Lexend";
+  font-weight: 500;
+  font-size: 14px;
+  border: 2px solid #689ea7;
+}
+
+#restart-button:hover,
+#finish-button:hover {
+  background-color: white;
+  color: #689ea7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }

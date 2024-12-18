@@ -36,13 +36,22 @@
             <div id="animal-part">
                 <img id="animalImage" src="" alt="Animal Part" />
             </div>
+            <div id="score" class="score-display">Score: 0</div>
             <div id="guessBoxes"></div>
             <div id="wrong-answer" class="hidden">Wrong Answer!</div>
             <div class="button-container">
                 <button id="submitGuess">Submit Guess</button>
                 <button id="next-button" class="visible">Next Question</button>
             </div>
-        </div>
+            <div id="reset-modal" style="display: none;">
+                <div id="modal-content">
+                    <p><span id="final-score"></span> <span id="total-questions"></span></p>
+                    <button id="restart-button">Restart</button>
+                    <button id="finish-button">Finish</button>
+                </div>
+            </div>   
+            <div id="correct-answer" class="hidden"></div>         
+        </div> 
     </div>    
     <script src="fungame.js"></script>
 </body>
