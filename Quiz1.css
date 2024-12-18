@@ -147,6 +147,15 @@ body {
   border-radius: 24px;
   padding: 5px;
   display: flex;
+  flex-direction: column;
+  background-size: cover;
+  align-items: center;
+
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .progress-container {
@@ -265,7 +274,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #689ea7;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -277,7 +286,7 @@ body {
 }
 
 #modal-content {
-  background-color: white;
+  background-color: #689ea7;
   border-radius: 24px;
   padding: 30px;
   text-align: center;
