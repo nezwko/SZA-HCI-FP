@@ -32,22 +32,47 @@
             </nav>
         </div>
     
-    <h2>Quiz: Fill in the Blanks</h2>
-    <div class="quiz-container">
-        <div class="question-container">
-            <span id="question"></span>
-            <input type="text" id="answer-input" placeholder="Fill in the blank..." />
+        <div class="container">
+            <h1>Fill in the Blanks Quiz</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            
+            <div class="question">
+                <p>The habitat of a Grizzly Bear is the <input type="text" id="blank1" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The capital of France is <input type="text" id="blank2" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The largest planet in our solar system is <input type="text" id="blank3" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The chemical symbol for water is <input type="text" id="blank4" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The process by which plants make their food is called <input type="text" id="blank5" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The currency used in Japan is <input type="text" id="blank6" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The first president of the United States was <input type="text" id="blank7" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The Great Wall of China was built to protect against <input type="text" id="blank8" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The smallest unit of life is called a <input type="text" id="blank9" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            <div class="question">
+                <p>The longest river in the world is the <input type="text" id="blank10" class="blank" placeholder="Type your answer here" /></p>
+            </div>
+            
+            <button id="submit-button">Submit Answer</button>
+            <button id="next-button" class="hidden">Next Question</button>
+            <div id="feedback" class="feedback hidden">Wrong Answer!</div>
         </div>
-        <div id="score-display">Score: 0</div>
-        <div id="wrong-answer" class="hidden">Wrong Answer!</div>
-    </div>
-    <div class="button-container">
-        <button id="next-button" class="visible">Next Question</button>
-    </div>
-    <div class="carrot-container">
-    </div>
-    
-    </div>
 
     <script src="Quiz1.js"></script>
 </body>

@@ -56,116 +56,62 @@ window.addEventListener('click', function(event) {
 });
 
 
-let currentQuestionIndex = 0;
-let score = 0;
-let isAnswerCorrect = false; // Flag to track if the answer is correct
-const wrongAnswerDisplay = document.getElementById("wrong-answer");
-const scoreDisplay = document.getElementById("score-display");
+const correctAnswers = {
+    blank1: "forest",
+    blank2: "paris",
+    blank3: "jupiter",
+    blank4: "h2o",
+    blank5: "photosynthesis",
+    blank6: "yen",
+    blank7: "george washington",
+    blank8: "invaders",
+    blank9: "cell",
+    blank10: "nile"
+};
+
+const progressBar = document.getElementById("progress-bar");
+const feedback = document.getElementById("feedback");
+const submitButton = document.getElementById("submit-button");
 const nextButton = document.getElementById("next-button");
-const answerInput = document.getElementById("answer-input");
-const carrotContainer = document.getElementById("carrot-container"); // Get the carrot container
+let currentQuestionIndex = 0;
+const totalQuestions = Object.keys(correctAnswers).length;
 
-const questions = [
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    },
-    {
-        question: "The habitat of a Grizzly Bear are the ",
-        answer: "forests"
-    }
-    // Add more questions as needed
-];
-
-const TOTAL_QUESTIONS = 10; // Define the total number of questions to reach
-
-function loadQuestion() {
-    const questionElement = document.getElementById("question");
-    questionElement.textContent = questions[currentQuestionIndex].question;
-    answerInput.value = ""; // Clear previous input
-    wrongAnswerDisplay.classList.add("hidden"); // Hide wrong answer message
-    nextButton.classList.remove("visible"); // Hide next button initially
-}
-
-nextButton.addEventListener("click", function() {
-    currentQuestionIndex++; // Move to the next question
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion(); // Load the next question
-        nextButton.classList.remove("visible"); // Hide the next button again
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < totalQuestions) {
+        // Hide the next button and show the current question
+        nextButton.classList.add("hidden");
+        document.querySelectorAll('.question').forEach((question, index) => {
+            question.style.display = index === currentQuestionIndex ? 'block' : 'none';
+        });
+        feedback.classList.add("hidden"); // Hide feedback
     } else {
-        // If there are no more questions, display a completion message
-        alert("You've completed all the questions! Final Score: " + score);
-        nextButton.style.display = "none"; // Hide the next button
+        alert("Quiz completed!");
+        // Optionally reset the quiz or show results
     }
 });
 
-function checkAnswer() {
-    const userAnswer = answerInput.value.trim().toLowerCase();
-    const correctAnswer = questions[currentQuestionIndex].answer.toLowerCase();
+submitButton.addEventListener("click", () => {
+    const userAnswer = document.getElementById(`blank${currentQuestionIndex + 1}`).value.trim().toLowerCase();
+    const correctAnswer = correctAnswers[`blank${currentQuestionIndex + 1}`].toLowerCase();
 
     if (userAnswer === correctAnswer) {
-        score++; // Increment score for correct answer
-        scoreDisplay.textContent = `Score: ${score}`; // Update score display
-        nextButton.classList.add("visible"); // Show next button
-        addCarrot(); // Add a new carrot after each correct answer
-
-    } else {
-        wrongAnswerDisplay.classList.remove("hidden"); // Show wrong answer message
-        isAnswerCorrect = false; // Reset the flag if the answer is wrong
-    }
-}
-
-function addCarrot() {
-    const carrotImage = document.createElement("img");
-    carrotImage.src = "https://static.vecteezy.com/system/resources/thumbnails/018/887/875/small_2x/cartoon-carrot-icon-png.png"; // Carrot image URL
-    carrotImage.alt = "Carrot";
-    carrotImage.id = "carrot"; // Assign an ID to the carrot image
-    carrotContainer.appendChild(carrotImage); // Append the carrot image to the container
-}
-
-// Load the first question
-loadQuestion();
-
-// Add event listener for the answer input
-answerInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        if (!isAnswerCorrect) {
-            checkAnswer(); // Check answer when Enter is pressed
-        } else {
-            // If the answer is correct, trigger the next button click to move to the next question
-            nextButton.click(); 
-        }
-    }
-});
+        // Move the progress bar
+                // Move the progress bar
+                const currentWidth = parseInt(getComputedStyle(progressBar).width);
+                const containerWidth = parseInt(getComputedStyle(progressBar.parentElement).width);
+                const newWidth = Math.min(currentWidth + (containerWidth / totalQuestions), containerWidth); // Move based on total questions
+                progressBar.style.width = (newWidth / containerWidth * 100) + "%";
+                
+                feedback.classList.add("hidden"); // Hide feedback
+                nextButton.classList.remove("hidden"); // Show the next button
+            } else {
+                feedback.classList.remove("hidden"); // Show feedback
+                nextButton.classList.add("hidden"); // Hide the next button
+            }
+        });
+        
+        // Initially hide all questions except the first one
+    document.querySelectorAll('.question').forEach((question, index) => {
+        question.style.display = index === 0 ? 'block' : 'none';
+    });
