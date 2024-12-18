@@ -57,16 +57,16 @@ window.addEventListener('click', function(event) {
 
 
 const questions = [
-    { question: "The habitat of a Grizzly Bear are the ", answer: "forests" },
-    { question: "The dietary of ", answer: "Paris" },
-    { question: "Water boils at __ degrees Celsius.", answer: "100" },
-    { question: "The Great Wall of China is in __", answer: "China" },
-    { question: "The chemical symbol for water is __", answer: "H2O" },
-    { question: "The fastest land animal is the __", answer: "cheetah" },
-    { question: "The largest planet in our solar system is __", answer: "Jupiter" },
-    { question: "The process of converting light into energy in plants is __", answer: "photosynthesis" },
-    { question: "The inventor of the light bulb was __", answer: "Edison" },
-    { question: "The largest ocean on Earth is the __", answer: "Pacific" }
+    { question: "The habitat of a Grizzly Bear is the", answer: "forest" },
+    { question: "Lions mostly eat ", answer: "meat" },
+    { question: "The fastest animal in the and is the ", answer: "cheetah" },
+    { question: "The animal that is used for its wool is ", answer: "sheep" },
+    { question: "The animal whose eggs are most commonly used is ", answer: "chicken" },
+    { question: "The animal whose milk is most commonly consumed is ", answer: "cow" },
+    { question: "The insect that has 8 legs is ", answer: "spider" },
+    { question: "The animal that has black and white stripes is ", answer: "zebra" },
+    { question: "The largest bird is called the ", answer: "ostrich" },
+    { question: "The animal that makes honey is ", answer: "bee" }
 ];
 
 let currentQuestion = 0;
@@ -74,7 +74,6 @@ let score = 0;
 let incorrectAnswers = [];
 
 const progressBar = document.getElementById("progress-bar");
-const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerInput = document.getElementById("answer-input");
 const submitBtn = document.getElementById("submit-btn");
@@ -113,7 +112,24 @@ submitBtn.addEventListener("click", () => {
     nextBtn.classList.remove("hidden");
 });
 
+// Add event listener for the Next button
+nextBtn.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+        updateProgressBar();
+    } else {
+        // Optionally, you can show results or reset the quiz here
+        alert(`Quiz completed! Your score: ${score}/${questions.length}`);
+        // Reset for a new quiz
+        currentQuestion = 0;
+        score = 0;
+        incorrectAnswers = [];
+        progressBar.style.width = '0%'; // Reset progress bar to 0%
+        loadQuestion(); // Load the first question again
+    }
+});
 
 // Initialize the quiz
 loadQuestion();
-updateProgressBar();
+progressBar.style.width = '0%'; // Ensure the progress bar starts at 0%
