@@ -6,18 +6,6 @@
   padding: 0;
 }
 
-body {
-  background-color: #CFFCFA;
-  background-image: url('quizbg.png');
-  background-repeat: no-repeat;
-  background-size:cover;
-  font-family: Lexend;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .navigationbar {
   text-align: center;
   display: flex;
@@ -136,76 +124,75 @@ body {
   }
 }
 
-.container {
-  margin-top: 150px;
-  justify-self: center;
-  text-align: center;
-  background-color: white;
-  justify-self: center;
-  text-align: center;
-  width: 800px;
-  height: 330px;
-  border-radius: 24px;
-  padding: 5px;
+body {
+  background-color: #CFFCFA;
+  background-image: url('quizbg.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  font-family: Lexend;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  background-size: cover;
+  justify-content: center;
   align-items: center;
-
+  min-height: 100vh;
 }
 
-.button-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.progress-container {
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
-  width: 80%;
-  margin: 20px;
+.quiz-container {
+  width: 600px;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
   justify-self: center;
+}
+
+.progress-bar-container {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .progress-bar {
-  height: 30px;
+  height: 20px;
   width: 0;
-  background-color: #76c7c0;
-  transition: width 0.5s;
+  background-color: #689ea7;
+  transition: width 0.5s ease-in-out;
 }
 
-.question {
-  margin: 20px 0;
+.question-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.blank {
-  border: 2px solid #76c7c0;
+#answer-input {
+  width: 160px;
+  padding: 10px;
+  height: 10px;
+  margin-top: 21px;
+  margin-left: 7px;
+  font-size: 16px;
+  font-family: "Lexend";
+  border: 1px solid #ccc;
   border-radius: 24px;
-  padding: 5px;
-  min-width: 100px;
-  display: inline-block;
+  display: flex;
 }
 
-.feedback.hidden {
-  color: red;
-  margin-top: 15px;
-  display: none;
+#question {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #689ea7;
 }
 
-.feedback {
-  color: red;
-  margin-top: 15px;
-}
-
-.container h1 {
-  color: #76c7c0;
-  justify-self: center;
-  font-size: 60px;
-  margin-top: 30px;
-}
-
-#submit-button {
+button {
+  cursor: pointer;
+  margin-top: 10px;
   background-color: #689ea7;
   color: white;
   border: none;
@@ -218,60 +205,17 @@ body {
   font-weight: 500;
   font-size: 14px;
   border: 2px solid #689ea7;
-}
-
-#submit-button:hover {
-  background-color: white;
-  color: #689ea7;
-  border-radius: 24px;
-  padding: 15px;
-  margin: 10px;
-  width: auto;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: "Lexend";
-  font-weight: 500;
-  font-size: 14px;
-  border: 2px solid #689ea7;
-}
-
-
-#modal {
-  display: none; /* Initially hidden */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #689ea7;
-  padding: 20px;
-  border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  color: white;
   
 }
 
-#modal.hidden {
-  display: none; /* Keeps it hidden */
-}
-
-#modal-content {
-  background-color: #689ea7;
-  border-radius: 24px;
-  padding: 30px;
-  text-align: center;
-  width: 500px;
-}
-
-#restart-button,
-#finish-button {
+button:hover {
   background-color: white;
   color: #689ea7;
-  border: none;
   border-radius: 24px;
   padding: 15px;
   margin: 10px;
   width: auto;
+  cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "Lexend";
   font-weight: 500;
@@ -279,10 +223,37 @@ body {
   border: 2px solid #689ea7;
 }
 
-#restart-button:hover,
-#finish-button:hover {
-  background-color: #3b6a72;
+.feedback {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.feedback.correct {
+  color: green;
+}
+
+.feedback.wrong {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+#incorrect-answers p {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: #333;
+}
+
+#restart-btn, #finish-btn {
+  background-color: #28a745;
+}
+
+#restart-btn:hover, #finish-btn:hover {
+  background-color: #218838;
+}
+
+.quiz-container h1 {
   color: #689ea7;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }

@@ -32,61 +32,24 @@
             </nav>
         </div>
 
-        <div class="container">
-            <h1>Fill in the Blanks Quiz</h1>
-            <div class="progress-container">
+        <div class="quiz-container">
+            <h1>Fill in the Blanks!</h1>
+            <div class="progress-bar-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
-
-            <!-- Questions -->
-            <div class="question">
-                <p>The habitat of a Grizzly Bear is the <input type="text" id="blank1" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The most common thing a carnivore eats is <input type="text" id="blank2" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The fastest animal in the land is <input type="text" id="blank3" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The animal that is mostly used for its wool<input type="text" id="blank4" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The animal whose eggs are most commonly consumed<input type="text" id="blank5" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The animal whose milk is most commonly used<input type="text" id="blank6" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The insect that has 8m legs<input type="text" id="blank7" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The Great Wall of China was built to protect against <input type="text" id="blank8" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The smallest unit of life is called a <input type="text" id="blank9" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-            <div class="question">
-                <p>The longest river in the world is the <input type="text" id="blank10" class="blank" placeholder="Type your answer here" /></p>
-            </div>
-
-            <!-- Buttons -->
-            <div class="button-container">
-            <button id="submit-button">Submit Answer</button>
-            </div>
+            <div class="question-container" id="question-container">
+                <p id="question"></p>
+                <input type="text" id="answer-input" placeholder="Type your answer here">
+                </div>
+                <div class="button-container">
+                    <button id="submit-btn">Submit Guess</button>
+                </div>
+        
+            <div id="feedback" class="feedback"></div>
+            <button id="next-btn" class="hidden">Next Question</button>
         </div>
     </div>
-
-    <!-- Modal for Results -->
-    <div id="modal" class="hidden">
-        <div id="modal-content">
-            <h2>Quiz Results</h2>
-            <p id="final-score"></p>
-            <ul id="wrong-answers-list"></ul>
-            <button id="restart-button">Restart Quiz</button>
-            <button id="finish-button">Finish</button>
-        </div>
-    </div>
+    
 
     <script src="Quiz1.js"></script>
 </body>

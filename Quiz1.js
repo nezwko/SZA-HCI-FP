@@ -56,167 +56,64 @@ window.addEventListener('click', function(event) {
 });
 
 
-const correctAnswers = {
-    blank1: "forest",
-    blank2: "meat",
-    blank3: "cheetah",
-    blank4: "sheep",
-    blank5: "chicken",
-    blank6: "cow",
-    blank7: "spider",
-    blank8: "",
-    blank9: "",
-    blank10: ""
-};
+const questions = [
+    { question: "The habitat of a Grizzly Bear are the ", answer: "forests" },
+    { question: "The capital of France is ", answer: "Paris" },
+    { question: "Water boils at __ degrees Celsius.", answer: "100" },
+    { question: "The Great Wall of China is in __", answer: "China" },
+    { question: "The chemical symbol for water is __", answer: "H2O" },
+    { question: "The fastest land animal is the __", answer: "cheetah" },
+    { question: "The largest planet in our solar system is __", answer: "Jupiter" },
+    { question: "The process of converting light into energy in plants is __", answer: "photosynthesis" },
+    { question: "The inventor of the light bulb was __", answer: "Edison" },
+    { question: "The largest ocean on Earth is the __", answer: "Pacific" }
+];
 
-let level = 0;
-let score = 0; // Initialize score
-let wrongAnswers = []; // To track incorrect answers
-const wrongAnswerDisplay = document.getElementById("wrong-answer");
-const scoreDisplay = document.getElementById("score");
+let currentQuestion = 0;
+let score = 0;
+let incorrectAnswers = [];
 
-function loadAnimalPart() {
-    if (level < animalParts.length) {
-        currentAnimal = animalParts[level];
-        document.getElementById('animalImage').src = currentAnimal.part;
-        wrongAnswerDisplay.classList.add("hidden");
-        document.getElementById('next-button').classList.remove('visible');
-        createGuessBoxes(currentAnimal.name.length);
-    } else {
-        // Show the modal when the game is completed
-        showModal();
-    }
+const progressBar = document.getElementById("progress-bar");
+const questionContainer = document.getElementById("question-container");
+const questionElement = document.getElementById("question");
+const answerInput = document.getElementById("answer-input");
+const submitBtn = document.getElementById("submit-btn");
+const nextBtn = document.getElementById("next-btn");
+const feedback = document.getElementById("feedback");
+
+function loadQuestion() {
+    questionElement.textContent = questions[currentQuestion].question;
+    answerInput.value = "";
+    feedback.textContent = "";
+    nextBtn.classList.add("hidden");
 }
 
-function createGuessBoxes(length) {
-    const guessBoxes = document.getElementById('guessBoxes');
-    guessBoxes.innerHTML = ''; // Clear previous boxes
-    for (let i = 0; i < length; i++) {
-        const input = document.createElement('input');
-        input.type = 'text';
-        input.maxLength = '1';
-        input.dataset.index = i; // Store index for later use
-
-        // Add event listener for input event
-        input.addEventListener('input', function () {
-            if (input.value.length === 1) { // Check if a character has been entered
-                const nextInput = guessBoxes.children[i + 1];
-                if (nextInput) {
-                    nextInput.focus(); // Move to the next input
-                }
-            }
-        });
-
-        guessBoxes.appendChild(input);
-    }
-    // Focus the first input box
-    guessBoxes.firstChild.focus();
+function updateProgressBar() {
+    const progress = ((currentQuestion + 1) / questions.length) * 100;
+    progressBar.style.width = `${progress}%`;
 }
 
-// Function to handle keydown events
-function handleKeyDown(event) {
-    const inputs = document.querySelectorAll('#guessBoxes input');
-    const currentIndex = Array.from(inputs).findIndex(input => input === document.activeElement);
+submitBtn.addEventListener("click", () => {
+    const userAnswer = answerInput.value.trim().toLowerCase();
+    const correctAnswer = questions[currentQuestion].answer.toLowerCase();
 
-    if (event.key === 'ArrowRight') {
-        event.preventDefault(); // Prevent default scrolling behavior
-        if (currentIndex < inputs.length - 1) {
-            inputs[currentIndex + 1].focus(); // Move to the next input
-        } else {
-            inputs[0].focus(); // Loop back to the first input
-        }
-    } else if (event.key === 'ArrowLeft') {
-        event.preventDefault(); // Prevent default scrolling behavior
-        if (currentIndex > 0) {
-            inputs[currentIndex - 1].focus(); // Move to the previous input
-        } else {
-            inputs[inputs.length - 1].focus(); // Loop back to the last input
-        }
-    } else if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent default form submission
-        document.getElementById('submitGuess').click(); // Trigger the submit button click
-    }
-};
-
-document.getElementById('submitGuess').addEventListener('click', function () {
-    const inputs = document.querySelectorAll('#guessBoxes input');
-    let userGuess = '';
-    inputs.forEach(input => {
-        userGuess += input.value.toLowerCase();
-    });
-
-    if (userGuess === currentAnimal.name) {
-        score++; // Increment score for a correct guess
-        updateScoreDisplay(); // Update the score display
+    if (userAnswer === correctAnswer) {
+        feedback.textContent = "Correct!";
+        feedback.style.color = "green";
+        score++;
     } else {
-        wrongAnswers.push({
-            question: currentAnimal.part,
-            correctAnswer: currentAnimal.name,
-            userAnswer: userGuess
+        feedback.textContent = "Wrong Answer!";
+        feedback.style.color = "red";
+        incorrectAnswers.push({
+            question: questions[currentQuestion].question,
+            correctAnswer: questions[currentQuestion].answer
         });
     }
 
-    // Allow the player to move to the next question regardless of correctness
-    document.getElementById('next-button').classList.add('visible');
-    document.getElementById('next-button').style.display = 'block';
+    nextBtn.classList.remove("hidden");
 });
 
-document.getElementById('next-button').addEventListener('click', function () {
-    document.getElementById('next-button').style.display = 'none';
-    level++;
-    loadAnimalPart();
-});
 
-// Function to show the modal
-function showModal() {
-    // Update the modal with the score
-    document.getElementById('final-score').textContent = `Your Score: ${score} out of ${animalParts.length}`;
-
-    const modalContent = document.getElementById('modal-content');
-    const wrongAnswersList = document.createElement('ul');
-
-    wrongAnswers.forEach(answer => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <strong>Question:</strong> <img src="${answer.question}" alt="Animal Part" style="width: 50px; height: auto;"> 
-            <strong>Your Answer:</strong> ${answer.userAnswer || 'No Answer'} 
-            <strong>Correct Answer:</strong> ${answer.correctAnswer}
-        `;
-        wrongAnswersList.appendChild(listItem);
-    });
-
-    modalContent.appendChild(wrongAnswersList);
-
-    document.getElementById('reset-modal').style.display = 'flex'; // Show the modal
-}
-
-
-// Function to restart the game
-function restartQuiz() {
-    level = 0; // Reset level
-    score = 0; // Reset score
-    wrongAnswers = []; // Clear wrong answers
-    updateScoreDisplay(); // Reset the score display
-    document.getElementById('reset-modal').style.display = 'none'; // Hide the modal
-    loadAnimalPart(); // Reload the first animal part
-}
-
-// Function to redirect to startplay.html
-function finishQuiz() {
-    window.location.href = 'startplay.html'; // Redirect to startplay.html
-}
-
-// Function to update the score display
-function updateScoreDisplay() {
-    scoreDisplay.textContent = `Score: ${score}`;
-}
-
-// Attach event listeners for modal buttons
-document.getElementById('restart-button').addEventListener('click', restartQuiz);
-document.getElementById('finish-button').addEventListener('click', finishQuiz);
-
-// Add keydown event listener to the document
-document.addEventListener('keydown', handleKeyDown);
-
-// Load the first animal part when the page loads
-window.onload = loadAnimalPart;
+// Initialize the quiz
+loadQuestion();
+updateProgressBar();
