@@ -9,6 +9,8 @@
 body {
   background-color: #CFFCFA;
   background-image: url('quizbg.png');
+  background-repeat: no-repeat;
+  background-size:cover;
   font-family: Lexend;
   display: flex;
   flex-direction: column;
@@ -233,39 +235,6 @@ body {
   border: 2px solid #689ea7;
 }
 
-#next-button {
-  background-color: #689ea7;
-  color: white;
-  border: none;
-  border-radius: 24px;
-  padding: 15px;
-  margin: 10px;
-  width: auto;
-  transition: background-color 0.3s ease;
-  font-family: "Lexend";
-  font-weight: 500;
-  font-size: 14px;
-  border: 2px solid #689ea7;
-  opacity: 1; /* Fully visible */
-  visibility: visible; /* Make it visible */
-  pointer-events: auto; /* Allow interaction when visible */
-  align-items: center;
-}
-
-#next-button:hover {
-  background-color: white;
-  color: #689ea7;
-  border-radius: 24px;
-  padding: 15px;
-  margin: 10px;
-  width: auto;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: "Lexend";
-  font-weight: 500;
-  font-size: 14px;
-  border: 2px solid #689ea7;
-}
 
 #modal {
   display: none; /* Initially hidden */
@@ -275,9 +244,11 @@ body {
   transform: translate(-50%, -50%);
   background-color: #689ea7;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 24px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  color: white;
+  
 }
 
 #modal.hidden {
@@ -294,8 +265,8 @@ body {
 
 #restart-button,
 #finish-button {
-  background-color: #689ea7;
-  color: white;
+  background-color: white;
+  color: #689ea7;
   border: none;
   border-radius: 24px;
   padding: 15px;
@@ -310,7 +281,7 @@ body {
 
 #restart-button:hover,
 #finish-button:hover {
-  background-color: white;
+  background-color: #3b6a72;
   color: #689ea7;
   cursor: pointer;
   transition: background-color 0.3s ease;
