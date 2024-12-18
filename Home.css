@@ -329,7 +329,10 @@ p {
   width: 40%;
   margin-top: 20px;
 }
-.learning-library1 button{
+
+.button-link {
+  display: inline-block; /* Make it behave like a button */
+  height: 50px;
   background-color: #689ea7;
   color: white;
   font-size: 16px;
@@ -342,12 +345,14 @@ p {
   font-weight: 500;
   transition: .3s ease;
   margin-bottom: 20px;
+  text-decoration: none;
 }
 
-.learning-library1 button:hover {
+.button-link:hover {
   background-color: black;
   color: white;
 }
+
 .learning-library1 p{
   margin: 20px;
 }
