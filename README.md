@@ -9,7 +9,7 @@ PawPedia is a fun educational website where kids can learn about animals and its
 ##### 2. Interactive Challenges: Quizzes and game
 
 ## Important Links
-#### GDRIVE LINK FOR VIDEO: 
+#### GDRIVE LINK FOR VIDEO: https://drive.google.com/file/d/1P-OPa27tF2Usw-Q7YY4HY1T9qJuRaruS/view?usp=drivesdk
 #### Github: https://github.com/nezwko/SZA-HCI-FP
 #### Website: https://nezwko.github.io/SZA-HCI-FP/
 
